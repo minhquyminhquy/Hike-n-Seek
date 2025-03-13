@@ -102,8 +102,8 @@ perftest route_shortest_distance 5 5000  # 5s timeout, 5k waypoints
 ## GUI Preview
 
 ### Hike & Seek Visualization
-![Hike & Seek Visualization](images/south-hervanta-places-areas.png.png)
-*Rendered with Qt using project's real data structures*
+![Hike & Seek Visualization](images/south-hervanta-places-areas.png)
+*Hiking areas and places in South Hervanta, next to my university*
 
 ---
 
