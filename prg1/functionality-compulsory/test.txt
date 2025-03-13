@@ -1,0 +1,8 @@
+clear_all
+get_place_count
+all_places
+get_place_name 0
+get_place_type 0
+get_place_coord 0
+add_place 111 "First" shelter (1,1)
+get_place_count

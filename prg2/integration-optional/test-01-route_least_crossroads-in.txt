@@ -1,0 +1,6 @@
+read "integration-optional/example-route_least_crossroads-in.txt"
+clear_all
+clear_ways
+all_ways
+get_ways_from (3,3)
+read "integration-optional/kintulammi-route_least_crossroads-in.txt"

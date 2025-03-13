@@ -1,0 +1,32 @@
+# Test all compulsory commands
+read "functionality-compulsory/test-00-simpletest-in.txt"
+# Test route_shortest_distance
+clear_ways
+all_ways
+# Add ways
+add_way First (0,0) (10,0)
+add_way Second (10,0) (5,5) (10,10)
+# Test basic routing
+route_shortest_distance (0,0) (10,0)
+route_shortest_distance (10,0) (10,10)
+route_shortest_distance (0,0) (10,10)
+route_shortest_distance (10,0) (0,0)
+route_shortest_distance (10,10) (0,0)
+# Test zero route
+route_shortest_distance (10,0) (10,0)
+# Test non-existing crossroad
+route_shortest_distance (1,1) (0,0)
+route_shortest_distance (0,0) (1,1)
+# Test a loop
+add_way Loop (0,3) (3,5) (0,5) (0,3)
+route_shortest_distance (0,3) (0,3)
+# Test a T-crossing
+add_way Third (10,0) (10,7) (18,0) (15,5)
+route_shortest_distance (0,0) (10,10)
+route_shortest_distance (15,5) (0,0)
+route_shortest_distance (10,10) (15,5)
+route_shortest_distance (15,5) (10,10)
+# Add a loop and test
+add_way Fourth (15,5) (10,10)
+route_shortest_distance (0,0) (15,5)
+route_shortest_distance (15,5) (10,0)

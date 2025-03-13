@@ -1,0 +1,9 @@
+# Ways
+add_way Wa (0,0) (3,3)
+add_way Wb (3,3) (5,1) (11,1)
+add_way Wc (3,3) (3,7)
+add_way Wd (0,7) (3,7)
+add_way We (7,10) (3,8)
+add_way Wf (3,7) (3,8)
+add_way Wg (11,1) (13,3) (13,8) (7,10)
+add_way Wh (0,7) (3,10)

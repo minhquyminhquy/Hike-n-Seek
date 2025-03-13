@@ -1,0 +1,37 @@
+clear_all
+get_place_count
+all_places
+find_places_with_name "Second"
+find_places_with_coord (1,1)
+find_places_with_type shelter
+# add places
+add_place P1 "First" shelter (1,1)
+get_place_count
+all_places
+add_place P2 "Second" peak (1,2)
+get_place_count
+all_places
+# get the order
+find_places_with_name "Second"
+find_places_with_coord (1,1)
+find_places_with_type shelter
+# add more and check the order
+add_place P4 "Second"  peak (1,2)
+find_places_with_coord (1,1)
+add_place P3 "Second" shelter (1,2)
+find_places_with_coord (2,1)
+add_place P5 "A" peak (2,1)
+find_places_with_coord (2,1)
+add_place P6 "A" peak (0,2)
+find_places_with_coord (0,0)
+find_places_with_coord (1,2)
+find_places_with_name "Second"
+find_places_with_name "A"
+find_places_with_type peak
+find_places_with_type shelter
+clear_all
+get_place_count
+all_places
+find_places_with_coord (1,2)
+find_places_with_name "Second"
+find_places_with_type peak

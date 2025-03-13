@@ -1,0 +1,72 @@
+> # VERY simple basic test of all compulsory commands
+> # Clear the data structures and check that place count is zero
+> clear_ways
+All routes removed.
+> all_ways
+No ways!
+> # Test compulsory commands with empty data
+> get_way_coords xxxx
+Way Way id xxxx has coords:
+(--NO_COORD--)
+
+> get_ways_from (0,0)
+No ways from coord (0,0)
+> route_any (0,0) (1,1)
+Starting or destination coord has no ways!
+> # Add one way and test commands
+> add_way Hori (0,0) (2,1) (5,0)
+Added way Hori with coords: (0,0) (2,1) (5,0)
+1. (0,0) way Hori
+2. (5,0)
+> get_way_coords Hori
+Way Way id Hori has coords:
+(0,0)
+(2,1)
+(5,0)
+
+> get_ways_from (0,0)
+1. (5,0) way Hori 
+> get_ways_from (5,0)
+1. (0,0) way Hori 
+> get_ways_from (2,1)
+No ways from coord (2,1)
+> route_any (0,0) (5,0)
+1. (0,0) distance 0
+2. (5,0) distance 5
+> route_any (5,0) (0,0)
+1. (5,0) distance 0
+2. (0,0) distance 5
+> # Add another way, test more commands
+> add_way Vert (0,5) (2,4) (0,0)
+Added way Vert with coords: (0,5) (2,4) (0,0)
+1. (0,5) way Vert
+2. (0,0)
+> get_way_coords Vert
+Way Way id Vert has coords:
+(0,5)
+(2,4)
+(0,0)
+
+> get_ways_from (0,0)
+1. (5,0) way Hori 
+2. (0,5) way Vert 
+> get_ways_from (0,5)
+1. (0,0) way Vert 
+> get_ways_from (5,0)
+1. (0,0) way Hori 
+> route_any (0,0) (0,5)
+1. (0,0) distance 0
+2. (0,5) distance 6
+> route_any (0,5) (0,0)
+1. (0,5) distance 0
+2. (0,0) distance 6
+> # Test route with more than one way
+> route_any (5,0) (0,5)
+1. (5,0) distance 0
+2. (0,0) distance 5
+3. (0,5) distance 11
+> route_any (0,5) (5,0)
+1. (0,5) distance 0
+2. (0,0) distance 6
+3. (5,0) distance 11
+> quit

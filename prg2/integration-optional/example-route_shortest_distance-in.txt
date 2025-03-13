@@ -1,0 +1,3 @@
+# First read in compulsory example
+read "integration-compulsory/test-00-commands-in.txt"
+route_shortest_distance (0,0) (7,10)

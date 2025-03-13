@@ -1,0 +1,63 @@
+# Test get_closest_common_ancestor_of_areas
+clear_all
+all_areas
+# Add areas and subarea relationships
+add_area 0 "Root" (9,9) (10,10) (10,9)
+add_area 123456 "Sector7" (0,0) (1,1) (2,4)
+add_area 654321 "Segment2" (6,6) (4,6) (6,4)
+add_subarea_to_area 123456 0
+add_subarea_to_area 654321 0
+add_area 321 "Area9" (3,3) (3,6) (6,3)
+add_area 123 "Region6" (2,2) (3,2) (3,3)
+add_subarea_to_area 321 123456
+add_subarea_to_area 123 123456
+all_areas
+# Test get_closest_common_ancestor_of_areas
+get_closest_common_ancestor_of_areas 123456 654321
+get_closest_common_ancestor_of_areas 123456 321
+get_closest_common_ancestor_of_areas 123456 123
+get_closest_common_ancestor_of_areas 321 654321
+get_closest_common_ancestor_of_areas 123 654321
+get_closest_common_ancestor_of_areas 123 321
+# Test non-existing
+get_closest_common_ancestor_of_areas 123 56
+get_closest_common_ancestor_of_areas 56 123
+get_closest_common_ancestor_of_areas 56 57
+# Test no parents, valid areas
+get_closest_common_ancestor_of_areas 0 123
+get_closest_common_ancestor_of_areas 123 0
+#clear and test with areas in different subtrees
+add_area 42 "Ro1" (9,9) (10,10) (10,9)
+add_area 20 "R1" (9,9) (10,10) (10,9)
+add_area 22 "R2" (9,9) (10,10) (10,9)
+add_area 10 "R3" (9,9) (10,10) (10,9)
+add_area 9 "Ro2" (9,9) (10,10) (10,9)
+add_area 11 "R1" (9,9) (10,10) (10,9)
+add_area 7 "R1" (9,9) (10,10) (10,9)
+add_area 3 "R1" (9,9) (10,10) (10,9)
+add_subarea_to_area 20 42
+add_subarea_to_area 22 20
+add_subarea_to_area 10 22
+add_subarea_to_area 11 9
+add_subarea_to_area 7 11
+add_subarea_to_area 3 7
+get_closest_common_ancestor_of_areas 3 10
+# another test with dividing subtrees
+clear_all
+add_area 42 "Ro1" (9,9) (10,10) (10,9)
+add_area 20 "R1" (9,9) (10,10) (10,9)
+add_area 22 "R2" (9,9) (10,10) (10,9)
+add_area 10 "R3" (9,9) (10,10) (10,9)
+add_area 9 "Ro2" (9,9) (10,10) (10,9)
+add_area 11 "R1" (9,9) (10,10) (10,9)
+add_area 7 "R1" (9,9) (10,10) (10,9)
+add_area 3 "R1" (9,9) (10,10) (10,9)
+add_subarea_to_area 20 42
+add_subarea_to_area 22 20
+add_subarea_to_area 10 22
+add_subarea_to_area 11 9
+add_subarea_to_area 7 11
+add_subarea_to_area 3 7
+add_subarea_to_area 9 20
+get_closest_common_ancestor_of_areas 3 10
+get_closest_common_ancestor_of_areas 10 3

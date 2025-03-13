@@ -1,0 +1,25 @@
+# Test get_closest_common_ancestor_of_areas
+clear_all
+all_areas
+# Add areas and subarea relationships
+add_area 0 "Root" (9,9) (10,10) (10,9)
+add_area 123456 "Sector7" (0,0) (1,1) (2,4)
+add_area 654321 "Segment2" (6,6) (4,6) (6,4)
+add_subarea_to_area 123456 0
+add_subarea_to_area 654321 0
+add_area 321 "Area9" (3,3) (3,6) (6,3)
+add_area 123 "Region6" (2,2) (3,2) (3,3)
+add_subarea_to_area 321 123456
+add_subarea_to_area 123 123456
+all_areas
+# Test get_closest_common_ancestor_of_areas
+get_closest_common_ancestor_of_areas 123456 654321
+get_closest_common_ancestor_of_areas 123456 321
+get_closest_common_ancestor_of_areas 123456 123
+get_closest_common_ancestor_of_areas 321 654321
+get_closest_common_ancestor_of_areas 123 654321
+get_closest_common_ancestor_of_areas 123 321
+# Test non-existing
+get_closest_common_ancestor_of_areas 123 56
+get_closest_common_ancestor_of_areas 56 123
+get_closest_common_ancestor_of_areas 56 57

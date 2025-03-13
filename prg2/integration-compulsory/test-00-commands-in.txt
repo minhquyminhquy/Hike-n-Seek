@@ -1,0 +1,9 @@
+clear_ways
+all_ways
+read "example-data/example-places.txt" silent
+read "example-data/example-areas.txt" silent
+read "example-data/example-ways.txt"
+all_ways
+get_way_coords Wb
+get_ways_from (3,3)
+route_any (3,7) (3,10)

@@ -1,0 +1,4 @@
+# First read in compulsory example
+read "integration-compulsory/test-00-commands-in.txt"
+trim_ways
+all_ways

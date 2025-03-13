@@ -1,0 +1,15 @@
+# Test all compulsory commands
+read "functionality-compulsory/test-00-simpletest-in.txt"
+# Test trim_ways
+clear_ways
+all_ways
+# Add ways
+add_way First (0,0) (10,0)
+add_way Second (10,0) (5,5) (10,10)
+add_way Loop (0,3) (3,5) (0,5) (0,3)
+add_way Third (10,0) (10,7) (18,0) (15,5)
+add_way Fourth (15,5) (10,10)
+all_ways
+# Test trim_ways
+trim_ways
+all_ways

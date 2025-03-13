@@ -1,0 +1,22 @@
+# Test basic area operations
+clear_all
+get_place_count
+all_areas
+# Add areas
+add_area 11 "Area1" (0,0) (10,0) (10,10) (0,10)
+add_area 22 "Area2" (0,0) (20,0) (20,20) (0,20)
+add_area 33 "Area3" (0,0) (5,0) (5,5) (0,5)
+add_area 44 "Area4" (0,0) (1,0) (1,1) (0,1)
+all_areas
+# Area with no parent area
+ancestor_areas_of_subarea 11
+# Add areas to other areas
+add_subarea_to_area 11 22
+add_subarea_to_area 33 22
+add_subarea_to_area 22 44
+# Ancestor areas of area after
+ancestor_areas_of_subarea 11
+ancestor_areas_of_subarea 12
+ancestor_areas_of_subarea 22
+ancestor_areas_of_subarea 33
+ancestor_areas_of_subarea 44

@@ -1,0 +1,21 @@
+clear_all
+all_places
+# get_area_coords with invalid area
+get_area_coords 0
+# add_subarea_to_area with invalid ids
+add_area 11 "Region1" (0,0) (10,0) (10,10) (0,10)
+add_subarea_to_area 11 0
+add_subarea_to_area 0 11
+# adding another area and the subarea add should succeed
+add_area 22 "Region2" (0,0) (20,0) (20,20) (0,20)
+add_subarea_to_area 22 11
+# but this one should not
+add_subarea_to_area 22 11
+# testing multiple same coordinates
+clear_all
+add_place 1 "A" peak (10,10)
+add_place 2 "B" peak (1,1)
+add_place 3 "C" peak (1,1)
+get_places_distance_increasing
+change_place_coord 3 (10,10)
+get_places_distance_increasing

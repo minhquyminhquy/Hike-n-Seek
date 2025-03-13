@@ -1,0 +1,178 @@
+> read "integration-optional/example-route_shortest_distance-in.txt"
+** Commands from 'integration-optional/example-route_shortest_distance-in.txt'
+> # First read in compulsory example
+> read "integration-compulsory/test-00-commands-in.txt"
+** Commands from 'integration-compulsory/test-00-commands-in.txt'
+> clear_ways
+All routes removed.
+> all_ways
+No ways!
+> read "example-data/example-places.txt" silent
+** Commands from 'example-data/example-places.txt'
+...(output discarded in silent mode)...
+** End of commands from 'example-data/example-places.txt'
+> read "example-data/example-areas.txt" silent
+** Commands from 'example-data/example-areas.txt'
+...(output discarded in silent mode)...
+** End of commands from 'example-data/example-areas.txt'
+> read "example-data/example-ways.txt"
+** Commands from 'example-data/example-ways.txt'
+> # Ways
+> add_way Wa (0,0) (3,3)
+Added way Wa with coords: (0,0) (3,3)
+1. (0,0) way Wa
+2. (3,3)
+> add_way Wb (3,3) (5,1) (11,1)
+Added way Wb with coords: (3,3) (5,1) (11,1)
+1. (3,3) way Wb
+2. (11,1)
+> add_way Wc (3,3) (3,7)
+Added way Wc with coords: (3,3) (3,7)
+1. (3,3) way Wc
+2. (3,7)
+> add_way Wd (0,7) (3,7)
+Added way Wd with coords: (0,7) (3,7)
+1. (0,7) way Wd
+2. (3,7)
+> add_way We (7,10) (3,8)
+Added way We with coords: (7,10) (3,8)
+1. (7,10) way We
+2. (3,8)
+> add_way Wf (3,7) (3,8)
+Added way Wf with coords: (3,7) (3,8)
+1. (3,7) way Wf
+2. (3,8)
+> add_way Wg (11,1) (13,3) (13,8) (7,10)
+Added way Wg with coords: (11,1) (13,3) (13,8) (7,10)
+1. (11,1) way Wg
+2. (7,10)
+> add_way Wh (0,7) (3,10)
+Added way Wh with coords: (0,7) (3,10)
+1. (0,7) way Wh
+2. (3,10)
+> 
+** End of commands from 'example-data/example-ways.txt'
+> all_ways
+1. Wa
+2. Wb
+3. Wc
+4. Wd
+5. We
+6. Wf
+7. Wg
+8. Wh
+> get_way_coords Wb
+Way Way id Wb has coords:
+(3,3)
+(5,1)
+(11,1)
+
+> get_ways_from (3,3)
+1. (0,0) way Wa 
+2. (11,1) way Wb 
+3. (3,7) way Wc 
+> route_any (3,7) (3,10)
+1. (3,7) distance 0
+2. (0,7) distance 3
+3. (3,10) distance 7
+> 
+** End of commands from 'integration-compulsory/test-00-commands-in.txt'
+> route_shortest_distance (0,0) (7,10)
+1. (0,0) way Wa distance 0
+2. (3,3) way Wc distance 4
+3. (3,7) way Wf distance 8
+4. (3,8) way We distance 9
+5. (7,10) distance 13
+> 
+** End of commands from 'integration-optional/example-route_shortest_distance-in.txt'
+> clear_all
+Cleared all places
+> clear_ways
+All routes removed.
+> all_ways
+No ways!
+> get_ways_from (3,3)
+No ways from coord (3,3)
+> read "integration-optional/kintulammi-route_shortest_distance-in.txt"
+** Commands from 'integration-optional/kintulammi-route_shortest_distance-in.txt'
+> read "integration-compulsory/test-01-kintulammi-in.txt"
+** Commands from 'integration-compulsory/test-01-kintulammi-in.txt'
+> # Read places and areas just to get the graphics look nice. :)
+> read "example-data/kintulammi-places.txt" silent
+** Commands from 'example-data/kintulammi-places.txt'
+...(output discarded in silent mode)...
+** End of commands from 'example-data/kintulammi-places.txt'
+> read "example-data/kintulammi-areas.txt" silent
+** Commands from 'example-data/kintulammi-areas.txt'
+...(output discarded in silent mode)...
+** End of commands from 'example-data/kintulammi-areas.txt'
+> 
+> # Basic operations
+> clear_ways
+All routes removed.
+> all_ways
+No ways!
+> 
+> # Read the ways
+> read "example-data/kintulammi-ways.txt" silent
+** Commands from 'example-data/kintulammi-ways.txt'
+...(output discarded in silent mode)...
+** End of commands from 'example-data/kintulammi-ways.txt'
+> 
+> # Information about ways
+> get_ways_from (479,248)
+1. (422,255) way 0x3d 
+2. (493,225) way 0x3e 
+3. (453,319) way 0xb48e23d 
+> get_way_coords 0x3d
+Way Way id 0x3d has coords:
+(422,255)
+(425,256)
+(435,256)
+(444,257)
+(445,257)
+(447,256)
+(453,254)
+(465,249)
+(468,248)
+(470,248)
+(473,248)
+(477,248)
+(479,248)
+
+> 
+> # Finding a route (a simple case so that there's only one choice)
+> route_any (540,517) (465,487)
+1. (540,517) distance 0
+2. (462,528) distance 96
+3. (478,491) distance 135
+4. (465,487) distance 148
+> quit
+** End of commands from 'integration-compulsory/test-01-kintulammi-in.txt'
+> route_shortest_distance (264,322) (371,338)
+1. (264,322) way 0x22f7b621 distance 0
+2. (266,311) way 0x2a4e62d8 distance 11
+3. (271,313) way 0x2a4e62da distance 16
+4. (272,314) way 0x2a4e62db distance 17
+5. (278,317) way 0x2a4e62dd distance 23
+6. (286,317) way 0xa7 distance 31
+7. (287,317) way 0x2a4e62df distance 32
+8. (297,324) way 0x2a4e62e9 distance 43
+9. (299,326) way 0x2a4e62ea distance 46
+10. (300,326) way 0x2a4e62e8 distance 47
+11. (303,326) way 0x2a4e62e7 distance 50
+12. (315,323) way 0x2a4e62e6 distance 62
+13. (317,322) way 0x2a4e62e5 distance 64
+14. (332,323) way 0x2a4e62e4 distance 79
+15. (334,324) way 0xa9 distance 81
+16. (335,324) way 0x2a4e62e2 distance 82
+17. (336,325) way 0xa8 distance 83
+18. (362,329) way 0x52 distance 110
+19. (371,338) distance 125
+> get_ways_from (194,119)
+1. (194,117) way 0x20 
+2. (221,165) way 0x21 
+3. (189,130) way 0x2da97189 
+> 
+** End of commands from 'integration-optional/kintulammi-route_shortest_distance-in.txt'
+> 

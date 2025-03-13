@@ -1,0 +1,87 @@
+> # Test get_closest_common_ancestor_of_areas
+> clear_all
+Cleared all places
+> all_areas
+No areas!
+> # Add areas and subarea relationships
+> add_area 0 "Root" (9,9) (10,10) (10,9)
+Area:
+   Root: id=0
+> add_area 123456 "Sector7" (0,0) (1,1) (2,4)
+Area:
+   Sector7: id=123456
+> add_area 654321 "Segment2" (6,6) (4,6) (6,4)
+Area:
+   Segment2: id=654321
+> add_subarea_to_area 123456 0
+Added 'Sector7' as a subarea of 'Root'
+Areas:
+1. Sector7: id=123456
+2. Root: id=0
+> add_subarea_to_area 654321 0
+Added 'Segment2' as a subarea of 'Root'
+Areas:
+1. Segment2: id=654321
+2. Root: id=0
+> add_area 321 "Area9" (3,3) (3,6) (6,3)
+Area:
+   Area9: id=321
+> add_area 123 "Region6" (2,2) (3,2) (3,3)
+Area:
+   Region6: id=123
+> add_subarea_to_area 321 123456
+Added 'Area9' as a subarea of 'Sector7'
+Areas:
+1. Area9: id=321
+2. Sector7: id=123456
+> add_subarea_to_area 123 123456
+Added 'Region6' as a subarea of 'Sector7'
+Areas:
+1. Region6: id=123
+2. Sector7: id=123456
+> all_areas
+Areas:
+1. Root: id=0
+2. Region6: id=123
+3. Area9: id=321
+4. Sector7: id=123456
+5. Segment2: id=654321
+> # Test get_closest_common_ancestor_of_areas
+> get_closest_common_ancestor_of_areas 123456 654321
+Areas:
+1. Sector7: id=123456
+2. Segment2: id=654321
+3. Root: id=0
+> get_closest_common_ancestor_of_areas 123456 321
+Areas:
+1. Sector7: id=123456
+2. Area9: id=321
+3. Root: id=0
+> get_closest_common_ancestor_of_areas 123456 123
+Areas:
+1. Sector7: id=123456
+2. Region6: id=123
+3. Root: id=0
+> get_closest_common_ancestor_of_areas 321 654321
+Areas:
+1. Area9: id=321
+2. Segment2: id=654321
+3. Root: id=0
+> get_closest_common_ancestor_of_areas 123 654321
+Areas:
+1. Region6: id=123
+2. Segment2: id=654321
+3. Root: id=0
+> get_closest_common_ancestor_of_areas 123 321
+Areas:
+1. Region6: id=123
+2. Area9: id=321
+3. Sector7: id=123456
+> # Test non-existing
+> get_closest_common_ancestor_of_areas 123 56
+No common parent area found.
+> get_closest_common_ancestor_of_areas 56 123
+No common parent area found.
+> get_closest_common_ancestor_of_areas 56 57
+No common parent area found.
+> 

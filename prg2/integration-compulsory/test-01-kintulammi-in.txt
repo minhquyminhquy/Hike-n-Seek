@@ -1,0 +1,18 @@
+# Read places and areas just to get the graphics look nice. :)
+read "example-data/kintulammi-places.txt" silent
+read "example-data/kintulammi-areas.txt" silent
+
+# Basic operations
+clear_ways
+all_ways
+
+# Read the ways
+read "example-data/kintulammi-ways.txt" silent
+
+# Information about ways
+get_ways_from (479,248)
+get_way_coords 0x3d
+
+# Finding a route (a simple case so that there's only one choice)
+route_any (540,517) (465,487)
+quit

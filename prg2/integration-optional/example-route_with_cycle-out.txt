@@ -1,0 +1,86 @@
+> # First read in compulsory example
+> read "integration-compulsory/test-00-commands-in.txt"
+** Commands from 'integration-compulsory/test-00-commands-in.txt'
+> clear_ways
+All routes removed.
+> all_ways
+No ways!
+> read "example-data/example-places.txt" silent
+** Commands from 'example-data/example-places.txt'
+...(output discarded in silent mode)...
+** End of commands from 'example-data/example-places.txt'
+> read "example-data/example-areas.txt" silent
+** Commands from 'example-data/example-areas.txt'
+...(output discarded in silent mode)...
+** End of commands from 'example-data/example-areas.txt'
+> read "example-data/example-ways.txt"
+** Commands from 'example-data/example-ways.txt'
+> # Ways
+> add_way Wa (0,0) (3,3)
+Added way Wa with coords: (0,0) (3,3)
+1. (0,0) way Wa
+2. (3,3)
+> add_way Wb (3,3) (5,1) (11,1)
+Added way Wb with coords: (3,3) (5,1) (11,1)
+1. (3,3) way Wb
+2. (11,1)
+> add_way Wc (3,3) (3,7)
+Added way Wc with coords: (3,3) (3,7)
+1. (3,3) way Wc
+2. (3,7)
+> add_way Wd (0,7) (3,7)
+Added way Wd with coords: (0,7) (3,7)
+1. (0,7) way Wd
+2. (3,7)
+> add_way We (7,10) (3,8)
+Added way We with coords: (7,10) (3,8)
+1. (7,10) way We
+2. (3,8)
+> add_way Wf (3,7) (3,8)
+Added way Wf with coords: (3,7) (3,8)
+1. (3,7) way Wf
+2. (3,8)
+> add_way Wg (11,1) (13,3) (13,8) (7,10)
+Added way Wg with coords: (11,1) (13,3) (13,8) (7,10)
+1. (11,1) way Wg
+2. (7,10)
+> add_way Wh (0,7) (3,10)
+Added way Wh with coords: (0,7) (3,10)
+1. (0,7) way Wh
+2. (3,10)
+> 
+** End of commands from 'example-data/example-ways.txt'
+> all_ways
+1. Wa
+2. Wb
+3. Wc
+4. Wd
+5. We
+6. Wf
+7. Wg
+8. Wh
+> get_way_coords Wb
+Way Way id Wb has coords:
+(3,3)
+(5,1)
+(11,1)
+
+> get_ways_from (3,3)
+1. (0,0) way Wa 
+2. (11,1) way Wb 
+3. (3,7) way Wc 
+> route_any (3,7) (3,10)
+1. (3,7) distance 0
+2. (0,7) distance 3
+3. (3,10) distance 7
+> 
+** End of commands from 'integration-compulsory/test-00-commands-in.txt'
+> route_with_cycle (0,0)
+1. (0,0) way Wa
+2. (3,3) way Wb
+3. (11,1) way Wg
+4. (7,10) way We
+5. (3,8) way Wf
+6. (3,7) way Wc
+7. (3,3)
+> 

@@ -1,0 +1,11 @@
+read "integration-compulsory/test-01-kintulammi-in.txt"
+
+get_ways_from (194,119)
+
+# The command below shouldn't find any cycles
+route_with_cycle (53,254)
+
+clear_ways
+
+read "example-data/kintulammi-ways-short.txt" silent
+route_with_cycle (182,42)

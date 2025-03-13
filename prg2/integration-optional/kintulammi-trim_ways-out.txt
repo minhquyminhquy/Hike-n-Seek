@@ -1,0 +1,71 @@
+> read "integration-compulsory/test-01-kintulammi-in.txt"
+** Commands from 'integration-compulsory/test-01-kintulammi-in.txt'
+> # Read places and areas just to get the graphics look nice. :)
+> read "example-data/kintulammi-places.txt" silent
+** Commands from 'example-data/kintulammi-places.txt'
+...(output discarded in silent mode)...
+** End of commands from 'example-data/kintulammi-places.txt'
+> read "example-data/kintulammi-areas.txt" silent
+** Commands from 'example-data/kintulammi-areas.txt'
+...(output discarded in silent mode)...
+** End of commands from 'example-data/kintulammi-areas.txt'
+> 
+> # Basic operations
+> clear_ways
+All routes removed.
+> all_ways
+No ways!
+> 
+> # Read the ways
+> read "example-data/kintulammi-ways.txt" silent
+** Commands from 'example-data/kintulammi-ways.txt'
+...(output discarded in silent mode)...
+** End of commands from 'example-data/kintulammi-ways.txt'
+> 
+> # Information about ways
+> get_ways_from (479,248)
+1. (422,255) way 0x3d 
+2. (493,225) way 0x3e 
+3. (453,319) way 0xb48e23d 
+> get_way_coords 0x3d
+Way Way id 0x3d has coords:
+(422,255)
+(425,256)
+(435,256)
+(444,257)
+(445,257)
+(447,256)
+(453,254)
+(465,249)
+(468,248)
+(470,248)
+(473,248)
+(477,248)
+(479,248)
+
+> 
+> # Finding a route (a simple case so that there's only one choice)
+> route_any (540,517) (465,487)
+1. (540,517) distance 0
+2. (462,528) distance 96
+3. (478,491) distance 135
+4. (465,487) distance 148
+> quit
+** End of commands from 'integration-compulsory/test-01-kintulammi-in.txt'
+> 
+> get_ways_from (194,119)
+1. (194,117) way 0x20 
+2. (221,165) way 0x21 
+3. (189,130) way 0x2da97189 
+> 
+> clear_ways
+All routes removed.
+> 
+> read "example-data/kintulammi-ways-short.txt" silent
+** Commands from 'example-data/kintulammi-ways-short.txt'
+...(output discarded in silent mode)...
+** End of commands from 'example-data/kintulammi-ways-short.txt'
+> 
+> trim_ways
+The remaining ways have a total length of 6163
+> 

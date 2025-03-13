@@ -1,0 +1,85 @@
+> clear_all
+Cleared all places
+> get_place_count
+Number of places: 0
+> all_places
+No places!
+> get_place_name 0
+Failed (NO_NAME returned)!
+> get_place_type 0
+Failed (NO_TYPE returned)!
+> get_place_coord 0
+Failed (NO_COORD returned)!
+> add_place 111 "First" shelter (1,1)
+Place:
+   First: pos=(1,1), id=111
+> get_place_count
+Number of places: 1
+> all_places
+Place:
+   First: pos=(1,1), id=111
+> add_place 111 "Wrong" firepit (2,3)
+Failed (NO_PLACE returned)!
+> get_place_count
+Number of places: 1
+> all_places
+Place:
+   First: pos=(1,1), id=111
+> add_place 222 "Second" firepit (1,2)
+Place:
+   Second: pos=(1,2), id=222
+> get_place_count
+Number of places: 2
+> all_places
+Places:
+1. First: pos=(1,1), id=111
+2. Second: pos=(1,2), id=222
+> # Add with same name and coordinates
+> add_place 123 "Second" firepit (1,2)
+Place:
+   Second: pos=(1,2), id=123
+> get_place_count
+Number of places: 3
+> all_places
+Places:
+1. First: pos=(1,1), id=111
+2. Second: pos=(1,2), id=123
+3. Second: pos=(1,2), id=222
+> get_place_name 111
+Name for place with id 111 is First
+> get_place_type 111
+Place 111 is type of 
+shelter
+> get_place_coord 111
+Place 111 has coordinates
+(1,1)
+> get_place_name 222
+Name for place with id 222 is Second
+> get_place_type 222
+Place 222 is type of 
+firepit
+> get_place_coord 222
+Place 222 has coordinates
+(1,2)
+> get_place_name 123
+Name for place with id 123 is Second
+> get_place_type 123
+Place 123 is type of 
+firepit
+> get_place_coord 123
+Place 123 has coordinates
+(1,2)
+> get_place_name 444
+Failed (NO_NAME returned)!
+> get_place_type 444
+Failed (NO_TYPE returned)!
+> get_place_coord 444
+Failed (NO_COORD returned)!
+> # check if clear all works in basic case
+> clear_all
+Cleared all places
+> get_place_count
+Number of places: 0
+> all_places
+No places!
+> 

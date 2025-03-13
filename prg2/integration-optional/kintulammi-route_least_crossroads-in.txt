@@ -1,0 +1,5 @@
+read "integration-compulsory/test-01-kintulammi-in.txt"
+
+# Test a route with the least crossroads
+route_least_crossroads (557,242) (420,552)
+route_least_crossroads (264,322) (371,338)

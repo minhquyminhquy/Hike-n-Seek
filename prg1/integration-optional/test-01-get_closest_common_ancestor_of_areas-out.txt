@@ -1,0 +1,222 @@
+> # Test get_closest_common_ancestor_of_areas
+> clear_all
+Cleared all places
+> all_areas
+No areas!
+> # Add areas and subarea relationships
+> add_area 0 "Root" (9,9) (10,10) (10,9)
+Area:
+   Root: id=0
+> add_area 123456 "Sector7" (0,0) (1,1) (2,4)
+Area:
+   Sector7: id=123456
+> add_area 654321 "Segment2" (6,6) (4,6) (6,4)
+Area:
+   Segment2: id=654321
+> add_subarea_to_area 123456 0
+Added 'Sector7' as a subarea of 'Root'
+Areas:
+1. Sector7: id=123456
+2. Root: id=0
+> add_subarea_to_area 654321 0
+Added 'Segment2' as a subarea of 'Root'
+Areas:
+1. Segment2: id=654321
+2. Root: id=0
+> add_area 321 "Area9" (3,3) (3,6) (6,3)
+Area:
+   Area9: id=321
+> add_area 123 "Region6" (2,2) (3,2) (3,3)
+Area:
+   Region6: id=123
+> add_subarea_to_area 321 123456
+Added 'Area9' as a subarea of 'Sector7'
+Areas:
+1. Area9: id=321
+2. Sector7: id=123456
+> add_subarea_to_area 123 123456
+Added 'Region6' as a subarea of 'Sector7'
+Areas:
+1. Region6: id=123
+2. Sector7: id=123456
+> all_areas
+Areas:
+1. Root: id=0
+2. Region6: id=123
+3. Area9: id=321
+4. Sector7: id=123456
+5. Segment2: id=654321
+> # Test get_closest_common_ancestor_of_areas
+> get_closest_common_ancestor_of_areas 123456 654321
+Areas:
+1. Sector7: id=123456
+2. Segment2: id=654321
+3. Root: id=0
+> get_closest_common_ancestor_of_areas 123456 321
+Areas:
+1. Sector7: id=123456
+2. Area9: id=321
+3. Root: id=0
+> get_closest_common_ancestor_of_areas 123456 123
+Areas:
+1. Sector7: id=123456
+2. Region6: id=123
+3. Root: id=0
+> get_closest_common_ancestor_of_areas 321 654321
+Areas:
+1. Area9: id=321
+2. Segment2: id=654321
+3. Root: id=0
+> get_closest_common_ancestor_of_areas 123 654321
+Areas:
+1. Region6: id=123
+2. Segment2: id=654321
+3. Root: id=0
+> get_closest_common_ancestor_of_areas 123 321
+Areas:
+1. Region6: id=123
+2. Area9: id=321
+3. Sector7: id=123456
+> # Test non-existing
+> get_closest_common_ancestor_of_areas 123 56
+No common parent area found.
+> get_closest_common_ancestor_of_areas 56 123
+No common parent area found.
+> get_closest_common_ancestor_of_areas 56 57
+No common parent area found.
+> # Test no parents, valid areas
+> get_closest_common_ancestor_of_areas 0 123
+No common parent area found.
+> get_closest_common_ancestor_of_areas 123 0
+No common parent area found.
+> #clear and test with areas in different subtrees
+Unknown command!
+> add_area 42 "Ro1" (9,9) (10,10) (10,9)
+Area:
+   Ro1: id=42
+> add_area 20 "R1" (9,9) (10,10) (10,9)
+Area:
+   R1: id=20
+> add_area 22 "R2" (9,9) (10,10) (10,9)
+Area:
+   R2: id=22
+> add_area 10 "R3" (9,9) (10,10) (10,9)
+Area:
+   R3: id=10
+> add_area 9 "Ro2" (9,9) (10,10) (10,9)
+Area:
+   Ro2: id=9
+> add_area 11 "R1" (9,9) (10,10) (10,9)
+Area:
+   R1: id=11
+> add_area 7 "R1" (9,9) (10,10) (10,9)
+Area:
+   R1: id=7
+> add_area 3 "R1" (9,9) (10,10) (10,9)
+Area:
+   R1: id=3
+> add_subarea_to_area 20 42
+Added 'R1' as a subarea of 'Ro1'
+Areas:
+1. R1: id=20
+2. Ro1: id=42
+> add_subarea_to_area 22 20
+Added 'R2' as a subarea of 'R1'
+Areas:
+1. R2: id=22
+2. R1: id=20
+> add_subarea_to_area 10 22
+Added 'R3' as a subarea of 'R2'
+Areas:
+1. R3: id=10
+2. R2: id=22
+> add_subarea_to_area 11 9
+Added 'R1' as a subarea of 'Ro2'
+Areas:
+1. R1: id=11
+2. Ro2: id=9
+> add_subarea_to_area 7 11
+Added 'R1' as a subarea of 'R1'
+Areas:
+1. R1: id=7
+2. R1: id=11
+> add_subarea_to_area 3 7
+Added 'R1' as a subarea of 'R1'
+Areas:
+1. R1: id=3
+2. R1: id=7
+> get_closest_common_ancestor_of_areas 3 10
+No common parent area found.
+> # another test with dividing subtrees
+> clear_all
+Cleared all places
+> add_area 42 "Ro1" (9,9) (10,10) (10,9)
+Area:
+   Ro1: id=42
+> add_area 20 "R1" (9,9) (10,10) (10,9)
+Area:
+   R1: id=20
+> add_area 22 "R2" (9,9) (10,10) (10,9)
+Area:
+   R2: id=22
+> add_area 10 "R3" (9,9) (10,10) (10,9)
+Area:
+   R3: id=10
+> add_area 9 "Ro2" (9,9) (10,10) (10,9)
+Area:
+   Ro2: id=9
+> add_area 11 "R1" (9,9) (10,10) (10,9)
+Area:
+   R1: id=11
+> add_area 7 "R1" (9,9) (10,10) (10,9)
+Area:
+   R1: id=7
+> add_area 3 "R1" (9,9) (10,10) (10,9)
+Area:
+   R1: id=3
+> add_subarea_to_area 20 42
+Added 'R1' as a subarea of 'Ro1'
+Areas:
+1. R1: id=20
+2. Ro1: id=42
+> add_subarea_to_area 22 20
+Added 'R2' as a subarea of 'R1'
+Areas:
+1. R2: id=22
+2. R1: id=20
+> add_subarea_to_area 10 22
+Added 'R3' as a subarea of 'R2'
+Areas:
+1. R3: id=10
+2. R2: id=22
+> add_subarea_to_area 11 9
+Added 'R1' as a subarea of 'Ro2'
+Areas:
+1. R1: id=11
+2. Ro2: id=9
+> add_subarea_to_area 7 11
+Added 'R1' as a subarea of 'R1'
+Areas:
+1. R1: id=7
+2. R1: id=11
+> add_subarea_to_area 3 7
+Added 'R1' as a subarea of 'R1'
+Areas:
+1. R1: id=3
+2. R1: id=7
+> add_subarea_to_area 9 20
+Added 'Ro2' as a subarea of 'R1'
+Areas:
+1. Ro2: id=9
+2. R1: id=20
+> get_closest_common_ancestor_of_areas 3 10
+Areas:
+1. R1: id=3
+2. R3: id=10
+3. R1: id=20
+> get_closest_common_ancestor_of_areas 10 3
+Areas:
+1. R3: id=10
+2. R1: id=3
+3. R1: id=20
+> 

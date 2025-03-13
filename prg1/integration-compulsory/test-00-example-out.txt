@@ -1,0 +1,86 @@
+> clear_all
+Cleared all places
+> # places
+> get_place_count
+Number of places: 0
+> read "example-data/example-places.txt" silent
+** Commands from 'example-data/example-places.txt'
+...(output discarded in silent mode)...
+** End of commands from 'example-data/example-places.txt'
+> get_place_count
+Number of places: 8
+> get_place_name 10
+Name for place with id 10 is Laavu
+> get_place_type 10
+Place 10 is type of 
+shelter
+> get_place_coord 4
+Place 4 has coordinates
+(0,7)
+> get_places_alphabetically
+Places:
+1. Laavu: pos=(3,3), id=10
+2. Lampi: pos=(1,5), id=78
+3. Luoto: pos=(10,5), id=98
+4. Metsa: pos=(7,10), id=123
+5. Nuotiopaikka: pos=(0,7), id=4
+6. Pysakointi: pos=(0,0), id=15
+7. Rantanuotio: pos=(11,1), id=20
+8. Vesijarvi: pos=(10,3), id=99
+> get_places_distance_increasing
+Places:
+1. Pysakointi: pos=(0,0), id=15
+2. Laavu: pos=(3,3), id=10
+3. Lampi: pos=(1,5), id=78
+4. Nuotiopaikka: pos=(0,7), id=4
+5. Vesijarvi: pos=(10,3), id=99
+6. Rantanuotio: pos=(11,1), id=20
+7. Luoto: pos=(10,5), id=98
+8. Metsa: pos=(7,10), id=123
+> find_places_with_type firepit
+Places:
+1. Rantanuotio: pos=(11,1), id=20
+2. Nuotiopaikka: pos=(0,7), id=4
+> change_place_name 20 "Nuotiopaikka"
+Place:
+   Nuotiopaikka: pos=(11,1), id=20
+> find_places_with_name "Nuotiopaikka"
+Places:
+1. Nuotiopaikka: pos=(11,1), id=20
+2. Nuotiopaikka: pos=(0,7), id=4
+> # Areas
+> read "example-data/example-areas.txt" silent
+** Commands from 'example-data/example-areas.txt'
+...(output discarded in silent mode)...
+** End of commands from 'example-data/example-areas.txt'
+> all_areas
+Areas:
+1. Lampi: id=78
+2. Luoto: id=98
+3. Vesijarvi: id=99
+4. Metsa: id=123
+> get_area_name 99
+Name for area with id 99 is Vesijarvi
+> get_area_coords 98
+Area 98 has coordinates
+(10,4)
+(11,5)
+(10,6)
+(9,5)
+> ancestor_areas_of_subarea 98
+Areas:
+1. Vesijarvi: id=99
+2. Metsa: id=123
+> add_area 999 "x" (8,3) (9,3) (8,4)
+Area:
+   x: id=999
+> add_subarea_to_area 999 99
+Added 'x' as a subarea of 'Vesijarvi'
+Areas:
+1. x: id=999
+2. Vesijarvi: id=99
+> ancestor_areas_of_subarea 999
+Areas:
+1. Vesijarvi: id=99
+2. Metsa: id=123
+> 

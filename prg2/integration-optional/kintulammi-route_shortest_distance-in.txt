@@ -1,0 +1,3 @@
+read "integration-compulsory/test-01-kintulammi-in.txt"
+route_shortest_distance (264,322) (371,338)
+get_ways_from (194,119)

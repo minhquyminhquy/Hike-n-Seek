@@ -1,0 +1,29 @@
+clear_all
+get_place_count
+all_places
+get_places_alphabetically
+# add places
+add_place 111 "First" shelter (1,1)
+get_place_count
+all_places
+add_place 222 "Second" firepit (1,2)
+get_place_count
+all_places
+# get the order
+get_places_alphabetically
+# get the order again just to make sure :wink:
+get_places_alphabetically
+# add more and check the order
+add_place 444 "Second" firepit (1,2)
+get_places_alphabetically
+get_places_alphabetically
+add_place 333 "Second" firepit (1,2)
+get_places_alphabetically
+get_places_alphabetically
+add_place 555 "A" peak (5,5)
+get_places_alphabetically
+get_places_alphabetically
+clear_all
+get_place_count
+all_places
+get_places_alphabetically

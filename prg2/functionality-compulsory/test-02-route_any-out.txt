@@ -1,0 +1,69 @@
+> # Test route_any
+> clear_ways
+All routes removed.
+> all_ways
+No ways!
+> # Add ways
+> add_way First (0,0) (10,0)
+Added way First with coords: (0,0) (10,0)
+1. (0,0) way First
+2. (10,0)
+> add_way Second (10,0) (5,5) (10,10)
+Added way Second with coords: (10,0) (5,5) (10,10)
+1. (10,0) way Second
+2. (10,10)
+> # Test basic routing
+> route_any (0,0) (10,0)
+1. (0,0) distance 0
+2. (10,0) distance 10
+> route_any (10,0) (10,10)
+1. (10,0) distance 0
+2. (10,10) distance 14
+> route_any (0,0) (10,10)
+1. (0,0) distance 0
+2. (10,0) distance 10
+3. (10,10) distance 24
+> route_any (10,0) (0,0)
+1. (10,0) distance 0
+2. (0,0) distance 10
+> route_any (10,10) (0,0)
+1. (10,10) distance 0
+2. (10,0) distance 14
+3. (0,0) distance 24
+> # Test zero route
+> route_any (10,0) (10,0)
+1. (10,0) distance 0
+> # Test non-existing crossroad
+> route_any (1,1) (0,0)
+Starting or destination coord has no ways!
+> route_any (0,0) (1,1)
+Starting or destination coord has no ways!
+> # Test a loop
+> add_way Loop (0,3) (3,5) (0,5) (0,3)
+Added way Loop with coords: (0,3) (3,5) (0,5) (0,3)
+1. (0,3) way Loop
+2. (0,3)
+> route_any (0,3) (0,3)
+1. (0,3) distance 0
+> # Test a T-crossing
+> add_way Third (10,0) (15,0) (15,5)
+Added way Third with coords: (10,0) (15,0) (15,5)
+1. (10,0) way Third
+2. (15,5)
+> route_any (0,0) (10,10)
+1. (0,0) distance 0
+2. (10,0) distance 10
+3. (10,10) distance 24
+> route_any (15,5) (0,0)
+1. (15,5) distance 0
+2. (10,0) distance 10
+3. (0,0) distance 20
+> route_any (10,10) (15,5)
+1. (10,10) distance 0
+2. (10,0) distance 14
+3. (15,5) distance 24
+> route_any (15,5) (10,10)
+1. (15,5) distance 0
+2. (10,0) distance 10
+3. (10,10) distance 24
+> 

@@ -1,0 +1,157 @@
+> # Test all compulsory commands
+> read "functionality-compulsory/test-00-simpletest-in.txt"
+** Commands from 'functionality-compulsory/test-00-simpletest-in.txt'
+> # VERY simple basic test of all compulsory commands
+> # Clear the data structures and check that place count is zero
+> clear_ways
+All routes removed.
+> all_ways
+No ways!
+> # Test compulsory commands with empty data
+> get_way_coords xxxx
+Way Way id xxxx has coords:
+(--NO_COORD--)
+
+> get_ways_from (0,0)
+No ways from coord (0,0)
+> route_any (0,0) (1,1)
+Starting or destination coord has no ways!
+> # Add one way and test commands
+> add_way Hori (0,0) (2,1) (5,0)
+Added way Hori with coords: (0,0) (2,1) (5,0)
+1. (0,0) way Hori
+2. (5,0)
+> get_way_coords Hori
+Way Way id Hori has coords:
+(0,0)
+(2,1)
+(5,0)
+
+> get_ways_from (0,0)
+1. (5,0) way Hori 
+> get_ways_from (5,0)
+1. (0,0) way Hori 
+> get_ways_from (2,1)
+No ways from coord (2,1)
+> route_any (0,0) (5,0)
+1. (0,0) distance 0
+2. (5,0) distance 5
+> route_any (5,0) (0,0)
+1. (5,0) distance 0
+2. (0,0) distance 5
+> # Add another way, test more commands
+> add_way Vert (0,5) (2,4) (0,0)
+Added way Vert with coords: (0,5) (2,4) (0,0)
+1. (0,5) way Vert
+2. (0,0)
+> get_way_coords Vert
+Way Way id Vert has coords:
+(0,5)
+(2,4)
+(0,0)
+
+> get_ways_from (0,0)
+1. (5,0) way Hori 
+2. (0,5) way Vert 
+> get_ways_from (0,5)
+1. (0,0) way Vert 
+> get_ways_from (5,0)
+1. (0,0) way Hori 
+> route_any (0,0) (0,5)
+1. (0,0) distance 0
+2. (0,5) distance 6
+> route_any (0,5) (0,0)
+1. (0,5) distance 0
+2. (0,0) distance 6
+> # Test route with more than one way
+> route_any (5,0) (0,5)
+1. (5,0) distance 0
+2. (0,0) distance 5
+3. (0,5) distance 11
+> route_any (0,5) (5,0)
+1. (0,5) distance 0
+2. (0,0) distance 6
+3. (5,0) distance 11
+> quit
+** End of commands from 'functionality-compulsory/test-00-simpletest-in.txt'
+> # Test route_least_crossroads
+> clear_ways
+All routes removed.
+> all_ways
+No ways!
+> # Add ways
+> add_way First (0,0) (10,0)
+Added way First with coords: (0,0) (10,0)
+1. (0,0) way First
+2. (10,0)
+> add_way Second (10,0) (5,5) (10,10)
+Added way Second with coords: (10,0) (5,5) (10,10)
+1. (10,0) way Second
+2. (10,10)
+> # Test basic routing
+> route_least_crossroads (0,0) (10,0)
+1. (0,0) way First distance 0
+2. (10,0) distance 10
+> route_least_crossroads (10,0) (10,10)
+1. (10,0) way Second distance 0
+2. (10,10) distance 14
+> route_least_crossroads (0,0) (10,10)
+1. (0,0) way First distance 0
+2. (10,0) way Second distance 10
+3. (10,10) distance 24
+> route_least_crossroads (10,0) (0,0)
+1. (10,0) way First distance 0
+2. (0,0) distance 10
+> route_least_crossroads (10,10) (0,0)
+1. (10,10) way Second distance 0
+2. (10,0) way First distance 14
+3. (0,0) distance 24
+> # Test zero route
+> route_least_crossroads (10,0) (10,0)
+1. (10,0) distance 0
+> # Test non-existing crossroad
+> route_least_crossroads (1,1) (0,0)
+Starting or destination coord has no ways!
+> route_least_crossroads (0,0) (1,1)
+Starting or destination coord has no ways!
+> # Test a loop
+> add_way Loop (0,3) (3,5) (0,5) (0,3)
+Added way Loop with coords: (0,3) (3,5) (0,5) (0,3)
+1. (0,3) way Loop
+2. (0,3)
+> route_least_crossroads (0,3) (0,3)
+1. (0,3) distance 0
+> # Test a T-crossing
+> add_way Third (10,0) (10,7) (18,0) (15,5)
+Added way Third with coords: (10,0) (10,7) (18,0) (15,5)
+1. (10,0) way Third
+2. (15,5)
+> route_least_crossroads (0,0) (10,10)
+1. (0,0) way First distance 0
+2. (10,0) way Second distance 10
+3. (10,10) distance 24
+> route_least_crossroads (15,5) (0,0)
+1. (15,5) way Third distance 0
+2. (10,0) way First distance 22
+3. (0,0) distance 32
+> route_least_crossroads (10,10) (15,5)
+1. (10,10) way Second distance 0
+2. (10,0) way Third distance 14
+3. (15,5) distance 36
+> route_least_crossroads (15,5) (10,10)
+1. (15,5) way Third distance 0
+2. (10,0) way Second distance 22
+3. (10,10) distance 36
+> # Add a loop and test
+> add_way Fourth (15,5) (10,10)
+Added way Fourth with coords: (15,5) (10,10)
+1. (15,5) way Fourth
+2. (10,10)
+> route_least_crossroads (0,0) (15,5)
+1. (0,0) way First distance 0
+2. (10,0) way Third distance 10
+3. (15,5) distance 32
+> route_least_crossroads (15,5) (10,0)
+1. (15,5) way Third distance 0
+2. (10,0) distance 22
+> 

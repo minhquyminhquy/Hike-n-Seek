@@ -1,0 +1,22 @@
+clear_all
+# places
+get_place_count
+read "example-data/example-places.txt" silent
+get_place_count
+get_place_name 10
+get_place_type 10
+get_place_coord 4
+get_places_alphabetically
+get_places_distance_increasing
+find_places_with_type firepit
+change_place_name 20 "Nuotiopaikka"
+find_places_with_name "Nuotiopaikka"
+# Areas
+read "example-data/example-areas.txt" silent
+all_areas
+get_area_name 99
+get_area_coords 98
+ancestor_areas_of_subarea 98
+add_area 999 "x" (8,3) (9,3) (8,4)
+add_subarea_to_area 999 99
+ancestor_areas_of_subarea 999

@@ -1,0 +1,58 @@
+> # Test removing a place
+> clear_all
+Cleared all places
+> get_place_count
+Number of places: 0
+> # Remove non-existing
+> remove_place 33
+Failed (NO_PLACE returned)!
+> # Add places, areas and containment
+> add_place 11 "Notown" bay (100,0)
+Place:
+   Notown: pos=(100,0), id=11
+> add_place 123456 "Sector7" bay (0,0)
+Place:
+   Sector7: pos=(0,0), id=123456
+> add_place 654321 "Segment2" parking (6,6)
+Place:
+   Segment2: pos=(6,6), id=654321
+> get_place_count
+Number of places: 3
+> add_area 321 "Area9" (3,3) (3,4) (4,5)
+Area:
+   Area9: id=321
+> add_area 123 "Region6" (2,2) (1,1) (1,2)
+Area:
+   Region6: id=123
+> all_areas
+Areas:
+1. Region6: id=123
+2. Area9: id=321
+> # Remove place
+> get_places_alphabetically
+Places:
+1. Notown: pos=(100,0), id=11
+2. Sector7: pos=(0,0), id=123456
+3. Segment2: pos=(6,6), id=654321
+> remove_place 11
+Notown removed.
+> get_places_alphabetically
+Places:
+1. Sector7: pos=(0,0), id=123456
+2. Segment2: pos=(6,6), id=654321
+> # Test area containment
+> all_areas
+Areas:
+1. Region6: id=123
+2. Area9: id=321
+> # Remove another
+> get_places_distance_increasing
+Places:
+1. Sector7: pos=(0,0), id=123456
+2. Segment2: pos=(6,6), id=654321
+> remove_place 654321
+Segment2 removed.
+> get_places_distance_increasing
+Place:
+   Sector7: pos=(0,0), id=123456
+> 

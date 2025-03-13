@@ -1,0 +1,193 @@
+> # Test removing a place
+> clear_all
+Cleared all places
+> get_place_count
+Number of places: 0
+> # Remove non-existing
+> remove_place 33
+Failed (NO_PLACE returned)!
+> # Add places, areas and containment
+> add_place 11 "Notown" bay (100,0)
+Place:
+   Notown: pos=(100,0), id=11
+> add_place 123456 "Sector7" bay (0,0)
+Place:
+   Sector7: pos=(0,0), id=123456
+> add_place 654321 "Segment2" bay (6,6)
+Place:
+   Segment2: pos=(6,6), id=654321
+> get_places_distance_increasing
+Places:
+1. Sector7: pos=(0,0), id=123456
+2. Segment2: pos=(6,6), id=654321
+3. Notown: pos=(100,0), id=11
+> get_places_alphabetically
+Places:
+1. Notown: pos=(100,0), id=11
+2. Sector7: pos=(0,0), id=123456
+3. Segment2: pos=(6,6), id=654321
+> get_place_count
+Number of places: 3
+> add_area 321 "Area9" (3,3) (3,4) (4,5)
+Area:
+   Area9: id=321
+> add_area 123 "Region6" (2,2) (1,1) (1,2)
+Area:
+   Region6: id=123
+> all_areas
+Areas:
+1. Region6: id=123
+2. Area9: id=321
+> find_places_with_coord (100,0)
+Place:
+   Notown: pos=(100,0), id=11
+> # Remove place
+> get_places_alphabetically
+Places:
+1. Notown: pos=(100,0), id=11
+2. Sector7: pos=(0,0), id=123456
+3. Segment2: pos=(6,6), id=654321
+> get_places_distance_increasing
+Places:
+1. Sector7: pos=(0,0), id=123456
+2. Segment2: pos=(6,6), id=654321
+3. Notown: pos=(100,0), id=11
+> remove_place 11
+Notown removed.
+> get_places_distance_increasing
+Places:
+1. Sector7: pos=(0,0), id=123456
+2. Segment2: pos=(6,6), id=654321
+> get_places_alphabetically
+Places:
+1. Sector7: pos=(0,0), id=123456
+2. Segment2: pos=(6,6), id=654321
+> all_places
+Places:
+1. Sector7: pos=(0,0), id=123456
+2. Segment2: pos=(6,6), id=654321
+> # Test area containment
+> find_places_with_coord (100,0)
+No places found!
+> # Remove another
+> get_places_distance_increasing
+Places:
+1. Sector7: pos=(0,0), id=123456
+2. Segment2: pos=(6,6), id=654321
+> remove_place 654321
+Segment2 removed.
+> get_places_distance_increasing
+Place:
+   Sector7: pos=(0,0), id=123456
+> # add a place with same ID
+> add_place 11 "yay" peak (1,1)
+Place:
+   yay: pos=(1,1), id=11
+> get_places_distance_increasing
+Places:
+1. Sector7: pos=(0,0), id=123456
+2. yay: pos=(1,1), id=11
+> get_places_alphabetically
+Places:
+1. Sector7: pos=(0,0), id=123456
+2. yay: pos=(1,1), id=11
+> all_places
+Places:
+1. yay: pos=(1,1), id=11
+2. Sector7: pos=(0,0), id=123456
+> # add the exact same as previous removed one
+> remove_place 11
+yay removed.
+> add_place 11 "yay" peak (1,1)
+Place:
+   yay: pos=(1,1), id=11
+> get_places_distance_increasing
+Places:
+1. Sector7: pos=(0,0), id=123456
+2. yay: pos=(1,1), id=11
+> get_places_alphabetically
+Places:
+1. Sector7: pos=(0,0), id=123456
+2. yay: pos=(1,1), id=11
+> all_places
+Places:
+1. yay: pos=(1,1), id=11
+2. Sector7: pos=(0,0), id=123456
+> # test removing non unique coordinated place
+> clear_all
+Cleared all places
+> add_place 1 "A" parking (10,10)
+Place:
+   A: pos=(10,10), id=1
+> add_place 2 "B" parking (1,1)
+Place:
+   B: pos=(1,1), id=2
+> add_place 3 "C" parking (1,1)
+Place:
+   C: pos=(1,1), id=3
+> get_places_distance_increasing
+Places:
+1. B: pos=(1,1), id=2
+2. C: pos=(1,1), id=3
+3. A: pos=(10,10), id=1
+> all_places
+Places:
+1. A: pos=(10,10), id=1
+2. B: pos=(1,1), id=2
+3. C: pos=(1,1), id=3
+> remove_place 3
+C removed.
+> get_places_distance_increasing
+Places:
+1. B: pos=(1,1), id=2
+2. A: pos=(10,10), id=1
+> all_places
+Places:
+1. A: pos=(10,10), id=1
+2. B: pos=(1,1), id=2
+> read "example-data/example-places.txt" silent
+** Commands from 'example-data/example-places.txt'
+...(output discarded in silent mode)...
+** End of commands from 'example-data/example-places.txt'
+> get_place_name 20
+Name for place with id 20 is Rantanuotio
+> change_place_name 20 "Nuotiopaikka"
+Place:
+   Nuotiopaikka: pos=(11,1), id=20
+> find_places_with_name "Nuotiopaikka"
+Places:
+1. Nuotiopaikka: pos=(11,1), id=20
+2. Nuotiopaikka: pos=(0,7), id=4
+> remove_place 20
+Nuotiopaikka removed.
+> get_place_name 20
+Failed (NO_NAME returned)!
+> find_places_with_name "Nuotiopaikka"
+Place:
+   Nuotiopaikka: pos=(0,7), id=4
+> find_places_with_type firepit
+Place:
+   Nuotiopaikka: pos=(0,7), id=4
+> get_places_alphabetically
+Places:
+1. A: pos=(10,10), id=1
+2. B: pos=(1,1), id=2
+3. Laavu: pos=(3,3), id=10
+4. Lampi: pos=(1,5), id=78
+5. Luoto: pos=(10,5), id=98
+6. Metsa: pos=(7,10), id=123
+7. Nuotiopaikka: pos=(0,7), id=4
+8. Pysakointi: pos=(0,0), id=15
+9. Vesijarvi: pos=(10,3), id=99
+> get_places_distance_increasing
+Places:
+1. Pysakointi: pos=(0,0), id=15
+2. B: pos=(1,1), id=2
+3. Laavu: pos=(3,3), id=10
+4. Lampi: pos=(1,5), id=78
+5. Nuotiopaikka: pos=(0,7), id=4
+6. Vesijarvi: pos=(10,3), id=99
+7. Luoto: pos=(10,5), id=98
+8. Metsa: pos=(7,10), id=123
+9. A: pos=(10,10), id=1
+> get_places_distance_increasing

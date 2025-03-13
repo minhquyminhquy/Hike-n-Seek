@@ -1,0 +1,26 @@
+# Test changing coord
+clear_all
+get_place_count
+# Change non-existing
+change_place_coord 123456789 (100,90)
+# Add places
+add_place 123456789 "P3" firepit (11,12)
+add_place 987654321 "P2" shelter (21,22)
+add_place 33 "P1" parking (3,3)
+add_place 66 "P4" bay (50,0)
+get_place_count
+# Change coord
+get_places_distance_increasing
+change_place_coord 33 (30,40)
+get_place_name 33
+get_place_coord 33
+get_places_distance_increasing
+# Test find
+find_places_with_coord (3,3)
+find_places_with_coord (30,40)
+# Change name
+get_places_alphabetically
+change_place_name 66 "New"
+get_places_alphabetically
+find_places_with_name "New"
+find_places_with_name "P4"

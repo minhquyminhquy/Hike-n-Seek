@@ -1,0 +1,15 @@
+# Test get_places_closest_to
+clear_all
+get_place_count
+# Test empty
+get_places_closest_to (1,1)
+# Add places
+add_place 123456789 "Fire" firepit (11,12)
+add_place 987654321 "Shelter" shelter (21,22)
+add_place 33 "Parking" parking (3,3)
+add_place 66 "Bay" bay (50,0)
+get_place_count
+# Test places_closest_to
+get_places_closest_to (20,10)
+get_places_closest_to (1,1)
+get_places_closest_to (10,10)

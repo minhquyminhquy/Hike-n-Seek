@@ -1,0 +1,23 @@
+# Test removing a place
+clear_all
+get_place_count
+# Remove non-existing
+remove_place 33
+# Add places, areas and containment
+add_place 11 "Notown" bay (100,0)
+add_place 123456 "Sector7" bay (0,0)
+add_place 654321 "Segment2" parking (6,6)
+get_place_count
+add_area 321 "Area9" (3,3) (3,4) (4,5)
+add_area 123 "Region6" (2,2) (1,1) (1,2)
+all_areas
+# Remove place
+get_places_alphabetically
+remove_place 11
+get_places_alphabetically
+# Test area containment
+all_areas
+# Remove another
+get_places_distance_increasing
+remove_place 654321
+get_places_distance_increasing

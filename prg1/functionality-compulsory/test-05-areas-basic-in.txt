@@ -1,0 +1,38 @@
+# requires test-00-basic + add_area, all_areas, get_area_name and get_area_coords
+clear_all
+all_areas
+# add areas
+add_area 0 "A0" (1,2) (0,0) (2,1)
+all_areas
+add_area 0 "wrong" (1,2) (3,4) (5,6)
+all_areas
+add_area 1 "A1" (1,1) (3,2) (2,3)
+get_area_name 0
+get_area_coords 0
+all_areas
+get_area_name 1
+get_area_coords 1
+get_area_name 2
+get_area_coords 2
+# check that clear_all also clears areas in basic case
+clear_all
+get_place_count
+all_places
+all_areas
+# Add places
+add_place 123456789 "P1" firepit (11,12)
+add_place 987654321 "P2" shelter (21,22)
+add_place 654321 "P3" bay (6,6)
+get_place_count
+# Add areas
+add_area 111 "Area1" (0,0) (10,0) (10,10) (0,10)
+add_area 22 "Area2" (0,0) (20,0) (20,20) (0,20)
+add_area 33 "Area3" (0,0) (5,0) (5,5) (0,5)
+all_areas
+# Add area to other areas
+add_subarea_to_area 111 22
+add_subarea_to_area 111 33
+add_subarea_to_area 111 23
+add_subarea_to_area 33 23
+add_subarea_to_area 33 22
+add_subarea_to_area 11 22

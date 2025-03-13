@@ -1,0 +1,504 @@
+> clear_all
+Cleared all places
+> add_area 2579 "R2579" (272668,6639705) (272668,6639943) (272906,6639705) (272906,6639943)
+Area:
+   R2579: id=2579
+> add_area 4644 "R4644" (272618,6639655) (272618,6639993) (272956,6639655) (272956,6639993)
+Area:
+   R4644: id=4644
+> add_subarea_to_area 2579 4644
+Added 'R2579' as a subarea of 'R4644'
+Areas:
+1. R2579: id=2579
+2. R4644: id=4644
+> add_place 999 "Hangonkylantie" parking (272787,6639824)
+Place:
+   Hangonkylantie: pos=(272787,6639824), id=999
+> get_place_name 999
+Name for place with id 999 is Hangonkylantie
+> get_area_coords 2579
+Area 2579 has coordinates
+(272668,6639705)
+(272668,6639943)
+(272906,6639705)
+(272906,6639943)
+> get_places_distance_increasing
+Place:
+   Hangonkylantie: pos=(272787,6639824), id=999
+> get_area_coords 2579
+Area 2579 has coordinates
+(272668,6639705)
+(272668,6639943)
+(272906,6639705)
+(272906,6639943)
+> all_areas
+Areas:
+1. R2579: id=2579
+2. R4644: id=4644
+> get_place_coord 999
+Place 999 has coordinates
+(272787,6639824)
+> ancestor_areas_of_subarea 999
+Failed (NO_AREA returned)!
+> change_place_coord 999 (272792,6639830)
+Place:
+   Hangonkylantie: pos=(272792,6639830), id=999
+> all_areas
+Areas:
+1. R2579: id=2579
+2. R4644: id=4644
+> get_places_alphabetically
+Place:
+   Hangonkylantie: pos=(272792,6639830), id=999
+> all_areas
+Areas:
+1. R2579: id=2579
+2. R4644: id=4644
+> all_places
+Place:
+   Hangonkylantie: pos=(272792,6639830), id=999
+> add_area 357 "R357" (265244,6786843) (265244,6787081) (265482,6786843) (265482,6787081)
+Area:
+   R357: id=357
+> add_area 246 "R246" (265194,6786793) (265194,6787131) (265532,6786793) (265532,6787131)
+Area:
+   R246: id=246
+> add_subarea_to_area 357 246
+Added 'R357' as a subarea of 'R246'
+Areas:
+1. R357: id=357
+2. R246: id=246
+> add_place 1234567890 "Moortintie" parking (265363,6786962)
+Place:
+   Moortintie: pos=(265363,6786962), id=1234567890
+> ancestor_areas_of_subarea 246
+Area does not belong to any area.
+> get_places_distance_increasing
+Places:
+1. Hangonkylantie: pos=(272792,6639830), id=999
+2. Moortintie: pos=(265363,6786962), id=1234567890
+> all_places
+Places:
+1. Moortintie: pos=(265363,6786962), id=1234567890
+2. Hangonkylantie: pos=(272792,6639830), id=999
+> add_area 4548 "R4548" (261935,7013995) (261935,7014233) (262173,7013995) (262173,7014233)
+Area:
+   R4548: id=4548
+> add_area 3770 "R3770" (261885,7013945) (261885,7014283) (262223,7013945) (262223,7014283)
+Area:
+   R3770: id=3770
+> add_subarea_to_area 4548 3770
+Added 'R4548' as a subarea of 'R3770'
+Areas:
+1. R4548: id=4548
+2. R3770: id=3770
+> add_place 1212121212121212 "Bokull" parking (262054,7014114)
+Place:
+   Bokull: pos=(262054,7014114), id=1212121212121212
+> get_place_count
+Number of places: 3
+> add_area 9736 "R9736" (353784,7549451) (353784,7549689) (354022,7549451) (354022,7549689)
+Area:
+   R9736: id=9736
+> add_area 267 "R267" (353734,7549401) (353734,7549739) (354072,7549401) (354072,7549739)
+Area:
+   R267: id=267
+> add_subarea_to_area 9736 267
+Added 'R9736' as a subarea of 'R267'
+Areas:
+1. R9736: id=9736
+2. R267: id=267
+> add_place 444 "Ylimuoniontie" peak (353903,7549570)
+Place:
+   Ylimuoniontie: pos=(353903,7549570), id=444
+> get_area_name 4644
+Name for area with id 4644 is R4644
+> get_place_name 1234567890
+Name for place with id 1234567890 is Moortintie
+> find_places_with_coord (272792,6639830)
+Place:
+   Hangonkylantie: pos=(272792,6639830), id=999
+> change_place_coord 1234567890 (265370,6786962)
+Place:
+   Moortintie: pos=(265370,6786962), id=1234567890
+> add_area 7316 "R7316" (423767,7203929) (423767,7204167) (424005,7203929) (424005,7204167)
+Area:
+   R7316: id=7316
+> add_area 4882 "R4882" (423717,7203879) (423717,7204217) (424055,7203879) (424055,7204217)
+Area:
+   R4882: id=4882
+> add_subarea_to_area 7316 4882
+Added 'R7316' as a subarea of 'R4882'
+Areas:
+1. R7316: id=7316
+2. R4882: id=4882
+> add_place 55 "Karhuoja" peak (423886,7204048)
+Place:
+   Karhuoja: pos=(423886,7204048), id=55
+> add_area 4095 "R4095" (385219,6722767) (385219,6723005) (385457,6722767) (385457,6723005)
+Area:
+   R4095: id=4095
+> add_area 2461 "R2461" (385169,6722717) (385169,6723055) (385507,6722717) (385507,6723055)
+Area:
+   R2461: id=2461
+> add_subarea_to_area 4095 2461
+Added 'R4095' as a subarea of 'R2461'
+Areas:
+1. R4095: id=4095
+2. R2461: id=2461
+> add_place 9875238947203785 "Kurjenpolventie" peak (385338,6722886)
+Place:
+   Kurjenpolventie: pos=(385338,6722886), id=9875238947203785
+> get_place_name 55
+Name for place with id 55 is Karhuoja
+> get_places_alphabetically
+Places:
+1. Bokull: pos=(262054,7014114), id=1212121212121212
+2. Hangonkylantie: pos=(272792,6639830), id=999
+3. Karhuoja: pos=(423886,7204048), id=55
+4. Kurjenpolventie: pos=(385338,6722886), id=9875238947203785
+5. Moortintie: pos=(265370,6786962), id=1234567890
+6. Ylimuoniontie: pos=(353903,7549570), id=444
+> get_place_count
+Number of places: 6
+> get_places_distance_increasing
+Places:
+1. Hangonkylantie: pos=(272792,6639830), id=999
+2. Kurjenpolventie: pos=(385338,6722886), id=9875238947203785
+3. Moortintie: pos=(265370,6786962), id=1234567890
+4. Bokull: pos=(262054,7014114), id=1212121212121212
+5. Karhuoja: pos=(423886,7204048), id=55
+6. Ylimuoniontie: pos=(353903,7549570), id=444
+> ancestor_areas_of_subarea 55
+Failed (NO_AREA returned)!
+> get_places_distance_increasing
+Places:
+1. Hangonkylantie: pos=(272792,6639830), id=999
+2. Kurjenpolventie: pos=(385338,6722886), id=9875238947203785
+3. Moortintie: pos=(265370,6786962), id=1234567890
+4. Bokull: pos=(262054,7014114), id=1212121212121212
+5. Karhuoja: pos=(423886,7204048), id=55
+6. Ylimuoniontie: pos=(353903,7549570), id=444
+> get_place_count
+Number of places: 6
+> get_area_name 3770
+Name for area with id 3770 is R3770
+> get_places_alphabetically
+Places:
+1. Bokull: pos=(262054,7014114), id=1212121212121212
+2. Hangonkylantie: pos=(272792,6639830), id=999
+3. Karhuoja: pos=(423886,7204048), id=55
+4. Kurjenpolventie: pos=(385338,6722886), id=9875238947203785
+5. Moortintie: pos=(265370,6786962), id=1234567890
+6. Ylimuoniontie: pos=(353903,7549570), id=444
+> get_area_name 9736
+Name for area with id 9736 is R9736
+> add_area 1566 "R1566" (281461,6701765) (281461,6702003) (281699,6701765) (281699,6702003)
+Area:
+   R1566: id=1566
+> add_area 314 "R314" (281411,6701715) (281411,6702053) (281749,6701715) (281749,6702053)
+Area:
+   R314: id=314
+> add_subarea_to_area 1566 314
+Added 'R1566' as a subarea of 'R314'
+Areas:
+1. R1566: id=1566
+2. R314: id=314
+> add_place 2468 "Heinaalhontie" other (281580,6701884)
+Place:
+   Heinaalhontie: pos=(281580,6701884), id=2468
+> get_place_coord 1234567890
+Place 1234567890 has coordinates
+(265370,6786962)
+> get_area_name 3770
+Name for area with id 3770 is R3770
+> get_place_coord 9875238947203785
+Place 9875238947203785 has coordinates
+(385338,6722886)
+> get_place_count
+Number of places: 7
+> find_places_with_coord (272792,6639830)
+Place:
+   Hangonkylantie: pos=(272792,6639830), id=999
+> all_places
+Places:
+1. Bokull: pos=(262054,7014114), id=1212121212121212
+2. Moortintie: pos=(265370,6786962), id=1234567890
+3. Heinaalhontie: pos=(281580,6701884), id=2468
+4. Ylimuoniontie: pos=(353903,7549570), id=444
+5. Karhuoja: pos=(423886,7204048), id=55
+6. Kurjenpolventie: pos=(385338,6722886), id=9875238947203785
+7. Hangonkylantie: pos=(272792,6639830), id=999
+> ancestor_areas_of_subarea 2468
+Failed (NO_AREA returned)!
+> add_area 4280 "R4280" (383009,6713626) (383009,6713864) (383247,6713626) (383247,6713864)
+Area:
+   R4280: id=4280
+> add_area 2059 "R2059" (382959,6713576) (382959,6713914) (383297,6713576) (383297,6713914)
+Area:
+   R2059: id=2059
+> add_subarea_to_area 4280 2059
+Added 'R4280' as a subarea of 'R2059'
+Areas:
+1. R4280: id=4280
+2. R2059: id=2059
+> add_place 567987 "Salmelanmaki" other (383128,6713745)
+Place:
+   Salmelanmaki: pos=(383128,6713745), id=567987
+> get_place_coord 2468
+Place 2468 has coordinates
+(281580,6701884)
+> get_place_name 444
+Name for place with id 444 is Ylimuoniontie
+> get_area_name 4548
+Name for area with id 4548 is R4548
+> get_area_name 314
+Name for area with id 314 is R314
+> find_places_with_type parking
+Places:
+1. Bokull: pos=(262054,7014114), id=1212121212121212
+2. Moortintie: pos=(265370,6786962), id=1234567890
+3. Hangonkylantie: pos=(272792,6639830), id=999
+> get_places_distance_increasing
+Places:
+1. Hangonkylantie: pos=(272792,6639830), id=999
+2. Heinaalhontie: pos=(281580,6701884), id=2468
+3. Salmelanmaki: pos=(383128,6713745), id=567987
+4. Kurjenpolventie: pos=(385338,6722886), id=9875238947203785
+5. Moortintie: pos=(265370,6786962), id=1234567890
+6. Bokull: pos=(262054,7014114), id=1212121212121212
+7. Karhuoja: pos=(423886,7204048), id=55
+8. Ylimuoniontie: pos=(353903,7549570), id=444
+> ancestor_areas_of_subarea 357
+Area:
+   R246: id=246
+> add_area 1005 "R1005" (365244,7097457) (365244,7097695) (365482,7097457) (365482,7097695)
+Area:
+   R1005: id=1005
+> add_area 2732 "R2732" (365194,7097407) (365194,7097745) (365532,7097407) (365532,7097745)
+Area:
+   R2732: id=2732
+> add_subarea_to_area 1005 2732
+Added 'R1005' as a subarea of 'R2732'
+Areas:
+1. R1005: id=1005
+2. R2732: id=2732
+> add_place 88 "Reku" other (365363,7097576)
+Place:
+   Reku: pos=(365363,7097576), id=88
+> add_area 417 "R417" (402056,6824581) (402056,6824819) (402294,6824581) (402294,6824819)
+Area:
+   R417: id=417
+> add_area 530 "R530" (402006,6824531) (402006,6824869) (402344,6824531) (402344,6824869)
+Area:
+   R530: id=530
+> add_subarea_to_area 417 530
+Added 'R417' as a subarea of 'R530'
+Areas:
+1. R417: id=417
+2. R530: id=530
+> add_place 8352362743329865203645306 "Poikkijarventie" firepit (402175,6824700)
+Place:
+   Poikkijarventie: pos=(402175,6824700), id=8352362743329865203645306
+> add_area 5927 "R5927" (433533,6913973) (433533,6914211) (433771,6913973) (433771,6914211)
+Area:
+   R5927: id=5927
+> add_area 8873 "R8873" (433483,6913923) (433483,6914261) (433821,6913923) (433821,6914261)
+Area:
+   R8873: id=8873
+> add_subarea_to_area 5927 8873
+Added 'R5927' as a subarea of 'R8873'
+Areas:
+1. R5927: id=5927
+2. R8873: id=8873
+> add_place 5555555555555577777777 "Koivuharju" firepit (433652,6914092)
+Place:
+   Koivuharju: pos=(433652,6914092), id=5555555555555577777777
+> get_place_name 1234567890
+Name for place with id 1234567890 is Moortintie
+> get_place_count
+Number of places: 11
+> get_place_name 1212121212121212
+Name for place with id 1212121212121212 is Bokull
+> add_area 832 "R832" (263613,6943194) (263613,6943432) (263851,6943194) (263851,6943432)
+Area:
+   R832: id=832
+> add_area 2080 "R2080" (263563,6943144) (263563,6943482) (263901,6943144) (263901,6943482)
+Area:
+   R2080: id=2080
+> add_subarea_to_area 832 2080
+Added 'R832' as a subarea of 'R2080'
+Areas:
+1. R832: id=832
+2. R2080: id=2080
+> add_place 111111111111111111111111111 "Pitkamonkyla" parking (263732,6943313)
+Place:
+   Pitkamonkyla: pos=(263732,6943313), id=111111111111111111111111111
+> get_places_alphabetically
+Places:
+1. Bokull: pos=(262054,7014114), id=1212121212121212
+2. Hangonkylantie: pos=(272792,6639830), id=999
+3. Heinaalhontie: pos=(281580,6701884), id=2468
+4. Karhuoja: pos=(423886,7204048), id=55
+5. Koivuharju: pos=(433652,6914092), id=5555555555555577777777
+6. Kurjenpolventie: pos=(385338,6722886), id=9875238947203785
+7. Moortintie: pos=(265370,6786962), id=1234567890
+8. Pitkamonkyla: pos=(263732,6943313), id=111111111111111111111111111
+9. Poikkijarventie: pos=(402175,6824700), id=8352362743329865203645306
+10. Reku: pos=(365363,7097576), id=88
+11. Salmelanmaki: pos=(383128,6713745), id=567987
+12. Ylimuoniontie: pos=(353903,7549570), id=444
+> all_places
+Places:
+1. Pitkamonkyla: pos=(263732,6943313), id=111111111111111111111111111
+2. Bokull: pos=(262054,7014114), id=1212121212121212
+3. Moortintie: pos=(265370,6786962), id=1234567890
+4. Heinaalhontie: pos=(281580,6701884), id=2468
+5. Ylimuoniontie: pos=(353903,7549570), id=444
+6. Karhuoja: pos=(423886,7204048), id=55
+7. Koivuharju: pos=(433652,6914092), id=5555555555555577777777
+8. Salmelanmaki: pos=(383128,6713745), id=567987
+9. Poikkijarventie: pos=(402175,6824700), id=8352362743329865203645306
+10. Reku: pos=(365363,7097576), id=88
+11. Kurjenpolventie: pos=(385338,6722886), id=9875238947203785
+12. Hangonkylantie: pos=(272792,6639830), id=999
+> get_place_coord 8352362743329865203645306
+Place 8352362743329865203645306 has coordinates
+(402175,6824700)
+> add_area 4510 "R4510" (232006,6721212) (232006,6721450) (232244,6721212) (232244,6721450)
+Area:
+   R4510: id=4510
+> add_area 1019 "R1019" (231956,6721162) (231956,6721500) (232294,6721162) (232294,6721500)
+Area:
+   R1019: id=1019
+> add_subarea_to_area 4510 1019
+Added 'R4510' as a subarea of 'R1019'
+Areas:
+1. R4510: id=4510
+2. R1019: id=1019
+> add_place 93824503864206 "Jonkkunen" parking (232125,6721331)
+Place:
+   Jonkkunen: pos=(232125,6721331), id=93824503864206
+> get_places_alphabetically
+Places:
+1. Bokull: pos=(262054,7014114), id=1212121212121212
+2. Hangonkylantie: pos=(272792,6639830), id=999
+3. Heinaalhontie: pos=(281580,6701884), id=2468
+4. Jonkkunen: pos=(232125,6721331), id=93824503864206
+5. Karhuoja: pos=(423886,7204048), id=55
+6. Koivuharju: pos=(433652,6914092), id=5555555555555577777777
+7. Kurjenpolventie: pos=(385338,6722886), id=9875238947203785
+8. Moortintie: pos=(265370,6786962), id=1234567890
+9. Pitkamonkyla: pos=(263732,6943313), id=111111111111111111111111111
+10. Poikkijarventie: pos=(402175,6824700), id=8352362743329865203645306
+11. Reku: pos=(365363,7097576), id=88
+12. Salmelanmaki: pos=(383128,6713745), id=567987
+13. Ylimuoniontie: pos=(353903,7549570), id=444
+> all_places
+Places:
+1. Pitkamonkyla: pos=(263732,6943313), id=111111111111111111111111111
+2. Bokull: pos=(262054,7014114), id=1212121212121212
+3. Moortintie: pos=(265370,6786962), id=1234567890
+4. Heinaalhontie: pos=(281580,6701884), id=2468
+5. Ylimuoniontie: pos=(353903,7549570), id=444
+6. Karhuoja: pos=(423886,7204048), id=55
+7. Koivuharju: pos=(433652,6914092), id=5555555555555577777777
+8. Salmelanmaki: pos=(383128,6713745), id=567987
+9. Poikkijarventie: pos=(402175,6824700), id=8352362743329865203645306
+10. Reku: pos=(365363,7097576), id=88
+11. Jonkkunen: pos=(232125,6721331), id=93824503864206
+12. Kurjenpolventie: pos=(385338,6722886), id=9875238947203785
+13. Hangonkylantie: pos=(272792,6639830), id=999
+> add_area 7291 "R7291" (464724,6818801) (464724,6819039) (464962,6818801) (464962,6819039)
+Area:
+   R7291: id=7291
+> add_area 3164 "R3164" (464674,6818751) (464674,6819089) (465012,6818751) (465012,6819089)
+Area:
+   R3164: id=3164
+> add_subarea_to_area 7291 3164
+Added 'R7291' as a subarea of 'R3164'
+Areas:
+1. R7291: id=7291
+2. R3164: id=3164
+> add_place 22 "Ulmalantie" shelter (464843,6818920)
+Place:
+   Ulmalantie: pos=(464843,6818920), id=22
+> find_places_with_coord (281580,6701884)
+Place:
+   Heinaalhontie: pos=(281580,6701884), id=2468
+> get_place_count
+Number of places: 14
+> add_area 8867 "R8867" (549723,7122198) (549723,7122436) (549961,7122198) (549961,7122436)
+Area:
+   R8867: id=8867
+> add_area 9050 "R9050" (549673,7122148) (549673,7122486) (550011,7122148) (550011,7122486)
+Area:
+   R9050: id=9050
+> add_subarea_to_area 8867 9050
+Added 'R8867' as a subarea of 'R9050'
+Areas:
+1. R8867: id=8867
+2. R9050: id=9050
+> add_place 87654 "Rimpilanniemi" shelter (549842,7122317)
+Place:
+   Rimpilanniemi: pos=(549842,7122317), id=87654
+> get_area_coords 314
+Area 314 has coordinates
+(281411,6701715)
+(281411,6702053)
+(281749,6701715)
+(281749,6702053)
+> find_places_with_type firepit
+Places:
+1. Koivuharju: pos=(433652,6914092), id=5555555555555577777777
+2. Poikkijarventie: pos=(402175,6824700), id=8352362743329865203645306
+> all_areas
+Areas:
+1. R246: id=246
+2. R267: id=267
+3. R314: id=314
+4. R357: id=357
+5. R417: id=417
+6. R530: id=530
+7. R832: id=832
+8. R1005: id=1005
+9. R1019: id=1019
+10. R1566: id=1566
+11. R2059: id=2059
+12. R2080: id=2080
+13. R2461: id=2461
+14. R2579: id=2579
+15. R2732: id=2732
+16. R3164: id=3164
+17. R3770: id=3770
+18. R4095: id=4095
+19. R4280: id=4280
+20. R4510: id=4510
+21. R4548: id=4548
+22. R4644: id=4644
+23. R4882: id=4882
+24. R5927: id=5927
+25. R7291: id=7291
+26. R7316: id=7316
+27. R8867: id=8867
+28. R8873: id=8873
+29. R9050: id=9050
+30. R9736: id=9736
+> get_places_distance_increasing
+Places:
+1. Hangonkylantie: pos=(272792,6639830), id=999
+2. Heinaalhontie: pos=(281580,6701884), id=2468
+3. Salmelanmaki: pos=(383128,6713745), id=567987
+4. Jonkkunen: pos=(232125,6721331), id=93824503864206
+5. Kurjenpolventie: pos=(385338,6722886), id=9875238947203785
+6. Moortintie: pos=(265370,6786962), id=1234567890
+7. Ulmalantie: pos=(464843,6818920), id=22
+8. Poikkijarventie: pos=(402175,6824700), id=8352362743329865203645306
+9. Koivuharju: pos=(433652,6914092), id=5555555555555577777777
+10. Pitkamonkyla: pos=(263732,6943313), id=111111111111111111111111111
+11. Bokull: pos=(262054,7014114), id=1212121212121212
+12. Reku: pos=(365363,7097576), id=88
+13. Rimpilanniemi: pos=(549842,7122317), id=87654
+14. Karhuoja: pos=(423886,7204048), id=55
+15. Ylimuoniontie: pos=(353903,7549570), id=444
+> 

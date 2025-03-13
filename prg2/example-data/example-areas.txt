@@ -1,0 +1,8 @@
+# Areas
+add_area 99 "Vesijarvi" (7,2) (12,2) (12,7) (7,7)
+add_area 98 "Luoto" (10,4) (11,5) (10,6) (9,5)
+add_subarea_to_area 98 99
+add_area 78 "Lampi" (0,4) (2,4) (1,6)
+add_area 123 "Metsa" (0,2) (2,0) (13,0) (15,12) (0,11)
+add_subarea_to_area 78 123
+add_subarea_to_area 99 123

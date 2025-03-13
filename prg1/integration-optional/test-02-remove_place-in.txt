@@ -1,0 +1,60 @@
+# Test removing a place
+clear_all
+get_place_count
+# Remove non-existing
+remove_place 33
+# Add places, areas and containment
+add_place 11 "Notown" bay (100,0)
+add_place 123456 "Sector7" bay (0,0)
+add_place 654321 "Segment2" bay (6,6)
+get_places_distance_increasing
+get_places_alphabetically
+get_place_count
+add_area 321 "Area9" (3,3) (3,4) (4,5)
+add_area 123 "Region6" (2,2) (1,1) (1,2)
+all_areas
+find_places_with_coord (100,0)
+# Remove place
+get_places_alphabetically
+get_places_distance_increasing
+remove_place 11
+get_places_distance_increasing
+get_places_alphabetically
+all_places
+# Test area containment
+find_places_with_coord (100,0)
+# Remove another
+get_places_distance_increasing
+remove_place 654321
+get_places_distance_increasing
+# add a place with same ID
+add_place 11 "yay" peak (1,1)
+get_places_distance_increasing
+get_places_alphabetically
+all_places
+# add the exact same as previous removed one
+remove_place 11
+add_place 11 "yay" peak (1,1)
+get_places_distance_increasing
+get_places_alphabetically
+all_places
+# test removing non unique coordinated place
+clear_all
+add_place 1 "A" parking (10,10)
+add_place 2 "B" parking (1,1)
+add_place 3 "C" parking (1,1)
+get_places_distance_increasing
+all_places
+remove_place 3
+get_places_distance_increasing
+all_places
+read "example-data/example-places.txt" silent
+get_place_name 20
+change_place_name 20 "Nuotiopaikka"
+find_places_with_name "Nuotiopaikka"
+remove_place 20
+get_place_name 20
+find_places_with_name "Nuotiopaikka"
+find_places_with_type firepit
+get_places_alphabetically
+get_places_distance_increasing

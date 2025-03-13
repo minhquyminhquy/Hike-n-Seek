@@ -1,0 +1,62 @@
+> # Test basic area operations
+> clear_all
+Cleared all places
+> get_place_count
+Number of places: 0
+> all_areas
+No areas!
+> # Add areas
+> add_area 11 "Area1" (0,0) (10,0) (10,10) (0,10)
+Area:
+   Area1: id=11
+> add_area 22 "Area2" (0,0) (20,0) (20,20) (0,20)
+Area:
+   Area2: id=22
+> add_area 33 "Area3" (0,0) (5,0) (5,5) (0,5)
+Area:
+   Area3: id=33
+> add_area 44 "Area4" (0,0) (1,0) (1,1) (0,1)
+Area:
+   Area4: id=44
+> all_areas
+Areas:
+1. Area1: id=11
+2. Area2: id=22
+3. Area3: id=33
+4. Area4: id=44
+> # Area with no parent area
+> ancestor_areas_of_subarea 11
+Area does not belong to any area.
+> # Add areas to other areas
+> add_subarea_to_area 11 22
+Added 'Area1' as a subarea of 'Area2'
+Areas:
+1. Area1: id=11
+2. Area2: id=22
+> add_subarea_to_area 33 22
+Added 'Area3' as a subarea of 'Area2'
+Areas:
+1. Area3: id=33
+2. Area2: id=22
+> add_subarea_to_area 22 44
+Added 'Area2' as a subarea of 'Area4'
+Areas:
+1. Area2: id=22
+2. Area4: id=44
+> # Ancestor areas of area after
+> ancestor_areas_of_subarea 11
+Areas:
+1. Area2: id=22
+2. Area4: id=44
+> ancestor_areas_of_subarea 12
+Failed (NO_AREA returned)!
+> ancestor_areas_of_subarea 22
+Area:
+   Area4: id=44
+> ancestor_areas_of_subarea 33
+Areas:
+1. Area2: id=22
+2. Area4: id=44
+> ancestor_areas_of_subarea 44
+Area does not belong to any area.
+> 

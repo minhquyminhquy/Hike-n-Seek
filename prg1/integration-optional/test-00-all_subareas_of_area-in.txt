@@ -1,0 +1,19 @@
+# Test all_subareas_of_area
+clear_all
+all_areas
+# Add areas and subarea relationships
+add_area 123456 "Sector7" (0,0) (1,1) (2,4)
+add_area 654321 "Segment2" (6,6) (4,6) (6,4)
+add_subarea_to_area 123456 654321
+add_area 321 "Area9" (3,3) (3,6) (6,3)
+add_area 123 "Region6" (2,2) (3,2) (3,3)
+add_subarea_to_area 321 123456
+add_subarea_to_area 123 123456
+all_areas
+# Test all_subareas_of_area
+all_subareas_of_area 123456
+all_subareas_of_area 654321
+all_subareas_of_area 321
+all_subareas_of_area 123
+# Test non-existing
+all_subareas_of_area 56

@@ -1,0 +1,6 @@
+read "integration-optional/example-trim_ways-in.txt"
+clear_all
+clear_ways
+all_ways
+get_ways_from (3,3)
+read "integration-optional/kintulammi-trim_ways-in.txt"

@@ -1,0 +1,32 @@
+clear_all
+get_place_count
+all_places
+get_places_distance_increasing
+# add places
+add_place 11 "First" shelter (1,1)
+get_place_count
+all_places
+add_place 22 "Second" firepit (1,2)
+get_place_count
+all_places
+# get the order
+get_places_distance_increasing
+# get the order again just to make sure :wink:
+get_places_distance_increasing
+# add more and check the order
+add_place 44 "Second" firepit (1,2)
+get_places_distance_increasing
+get_places_distance_increasing
+add_place 33 "Second" peak (1,2)
+get_places_distance_increasing
+get_places_distance_increasing
+add_place 55 "A" bay (2,1)
+get_places_distance_increasing
+get_places_distance_increasing
+add_place 66 "A" bay (0,2)
+get_places_distance_increasing
+get_places_distance_increasing
+clear_all
+get_place_count
+all_places
+get_places_distance_increasing

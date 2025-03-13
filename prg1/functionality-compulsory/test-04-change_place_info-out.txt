@@ -1,0 +1,72 @@
+> # Test changing coord
+> clear_all
+Cleared all places
+> get_place_count
+Number of places: 0
+> # Change non-existing
+> change_place_coord 123456789 (100,90)
+Failed (NO_PLACE returned)!
+> # Add places
+> add_place 123456789 "P3" firepit (11,12)
+Place:
+   P3: pos=(11,12), id=123456789
+> add_place 987654321 "P2" shelter (21,22)
+Place:
+   P2: pos=(21,22), id=987654321
+> add_place 33 "P1" parking (3,3)
+Place:
+   P1: pos=(3,3), id=33
+> add_place 66 "P4" bay (50,0)
+Place:
+   P4: pos=(50,0), id=66
+> get_place_count
+Number of places: 4
+> # Change coord
+> get_places_distance_increasing
+Places:
+1. P1: pos=(3,3), id=33
+2. P3: pos=(11,12), id=123456789
+3. P2: pos=(21,22), id=987654321
+4. P4: pos=(50,0), id=66
+> change_place_coord 33 (30,40)
+Place:
+   P1: pos=(30,40), id=33
+> get_place_name 33
+Name for place with id 33 is P1
+> get_place_coord 33
+Place 33 has coordinates
+(30,40)
+> get_places_distance_increasing
+Places:
+1. P3: pos=(11,12), id=123456789
+2. P2: pos=(21,22), id=987654321
+3. P4: pos=(50,0), id=66
+4. P1: pos=(30,40), id=33
+> # Test find
+> find_places_with_coord (3,3)
+No places found!
+> find_places_with_coord (30,40)
+Place:
+   P1: pos=(30,40), id=33
+> # Change name
+> get_places_alphabetically
+Places:
+1. P1: pos=(30,40), id=33
+2. P2: pos=(21,22), id=987654321
+3. P3: pos=(11,12), id=123456789
+4. P4: pos=(50,0), id=66
+> change_place_name 66 "New"
+Place:
+   New: pos=(50,0), id=66
+> get_places_alphabetically
+Places:
+1. New: pos=(50,0), id=66
+2. P1: pos=(30,40), id=33
+3. P2: pos=(21,22), id=987654321
+4. P3: pos=(11,12), id=123456789
+> find_places_with_name "New"
+Place:
+   New: pos=(50,0), id=66
+> find_places_with_name "P4"
+No places found!
+> 

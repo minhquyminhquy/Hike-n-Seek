@@ -1,0 +1,98 @@
+> # requires test-00-basic + add_area, all_areas, get_area_name and get_area_coords
+> clear_all
+Cleared all places
+> all_areas
+No areas!
+> # add areas
+> add_area 0 "A0" (1,2) (0,0) (2,1)
+Area:
+   A0: id=0
+> all_areas
+Area:
+   A0: id=0
+> add_area 0 "wrong" (1,2) (3,4) (5,6)
+Failed (NO_AREA returned)!
+> all_areas
+Area:
+   A0: id=0
+> add_area 1 "A1" (1,1) (3,2) (2,3)
+Area:
+   A1: id=1
+> get_area_name 0
+Name for area with id 0 is A0
+> get_area_coords 0
+Area 0 has coordinates
+(1,2)
+(0,0)
+(2,1)
+> all_areas
+Areas:
+1. A0: id=0
+2. A1: id=1
+> get_area_name 1
+Name for area with id 1 is A1
+> get_area_coords 1
+Area 1 has coordinates
+(1,1)
+(3,2)
+(2,3)
+> get_area_name 2
+Failed (NO_NAME returned)!
+> get_area_coords 2
+Failed (NO_COORD returned)!
+> # check that clear_all also clears areas in basic case
+> clear_all
+Cleared all places
+> get_place_count
+Number of places: 0
+> all_places
+No places!
+> all_areas
+No areas!
+> # Add places
+> add_place 123456789 "P1" firepit (11,12)
+Place:
+   P1: pos=(11,12), id=123456789
+> add_place 987654321 "P2" shelter (21,22)
+Place:
+   P2: pos=(21,22), id=987654321
+> add_place 654321 "P3" bay (6,6)
+Place:
+   P3: pos=(6,6), id=654321
+> get_place_count
+Number of places: 3
+> # Add areas
+> add_area 111 "Area1" (0,0) (10,0) (10,10) (0,10)
+Area:
+   Area1: id=111
+> add_area 22 "Area2" (0,0) (20,0) (20,20) (0,20)
+Area:
+   Area2: id=22
+> add_area 33 "Area3" (0,0) (5,0) (5,5) (0,5)
+Area:
+   Area3: id=33
+> all_areas
+Areas:
+1. Area2: id=22
+2. Area3: id=33
+3. Area1: id=111
+> # Add area to other areas
+> add_subarea_to_area 111 22
+Added 'Area1' as a subarea of 'Area2'
+Areas:
+1. Area1: id=111
+2. Area2: id=22
+> add_subarea_to_area 111 33
+Adding a subarea failed!
+> add_subarea_to_area 111 23
+Adding a subarea failed!
+> add_subarea_to_area 33 23
+Adding a subarea failed!
+> add_subarea_to_area 33 22
+Added 'Area3' as a subarea of 'Area2'
+Areas:
+1. Area3: id=33
+2. Area2: id=22
+> add_subarea_to_area 11 22
+Adding a subarea failed!
+> 

@@ -1,0 +1,100 @@
+> clear_all
+Cleared all places
+> get_place_count
+Number of places: 0
+> all_places
+No places!
+> find_places_with_name "Second"
+No places found!
+> find_places_with_coord (1,1)
+No places found!
+> find_places_with_type shelter
+No places found!
+> # add places
+> add_place P1 "First" shelter (1,1)
+Place:
+   First: pos=(1,1), id=P1
+> get_place_count
+Number of places: 1
+> all_places
+Place:
+   First: pos=(1,1), id=P1
+> add_place P2 "Second" peak (1,2)
+Place:
+   Second: pos=(1,2), id=P2
+> get_place_count
+Number of places: 2
+> all_places
+Places:
+1. First: pos=(1,1), id=P1
+2. Second: pos=(1,2), id=P2
+> # get the order
+> find_places_with_name "Second"
+Place:
+   Second: pos=(1,2), id=P2
+> find_places_with_coord (1,1)
+Place:
+   First: pos=(1,1), id=P1
+> find_places_with_type shelter
+Place:
+   First: pos=(1,1), id=P1
+> # add more and check the order
+> add_place P4 "Second"  peak (1,2)
+Place:
+   Second: pos=(1,2), id=P4
+> find_places_with_coord (1,1)
+Place:
+   First: pos=(1,1), id=P1
+> add_place P3 "Second" shelter (1,2)
+Place:
+   Second: pos=(1,2), id=P3
+> find_places_with_coord (2,1)
+No places found!
+> add_place P5 "A" peak (2,1)
+Place:
+   A: pos=(2,1), id=P5
+> find_places_with_coord (2,1)
+Place:
+   A: pos=(2,1), id=P5
+> add_place P6 "A" peak (0,2)
+Place:
+   A: pos=(0,2), id=P6
+> find_places_with_coord (0,0)
+No places found!
+> find_places_with_coord (1,2)
+Places:
+1. Second: pos=(1,2), id=P2
+2. Second: pos=(1,2), id=P3
+3. Second: pos=(1,2), id=P4
+> find_places_with_name "Second"
+Places:
+1. Second: pos=(1,2), id=P2
+2. Second: pos=(1,2), id=P3
+3. Second: pos=(1,2), id=P4
+> find_places_with_name "A"
+Places:
+1. A: pos=(2,1), id=P5
+2. A: pos=(0,2), id=P6
+> find_places_with_type peak
+Places:
+1. Second: pos=(1,2), id=P2
+2. Second: pos=(1,2), id=P4
+3. A: pos=(2,1), id=P5
+4. A: pos=(0,2), id=P6
+> find_places_with_type shelter
+Places:
+1. First: pos=(1,1), id=P1
+2. Second: pos=(1,2), id=P3
+> clear_all
+Cleared all places
+> get_place_count
+Number of places: 0
+> all_places
+No places!
+> find_places_with_coord (1,2)
+No places found!
+> find_places_with_name "Second"
+No places found!
+> find_places_with_type peak
+No places found!
+> 

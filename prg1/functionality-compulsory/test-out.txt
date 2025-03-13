@@ -1,0 +1,17 @@
+> clear_all
+Cleared all places
+> get_place_count
+Number of places: 0
+> all_places
+No places!
+> get_place_name 0
+Failed (NO_NAME returned)!
+> get_place_type 0
+Failed (NO_TYPE returned)!
+> get_place_coord 0
+Failed (NO_COORD returned)!
+> add_place 111 "First" shelter (1,1)
+Place:
+   First: pos=(1,1), id=111
+> get_place_count
+Number of places: 1

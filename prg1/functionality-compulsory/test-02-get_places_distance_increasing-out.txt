@@ -1,0 +1,108 @@
+> clear_all
+Cleared all places
+> get_place_count
+Number of places: 0
+> all_places
+No places!
+> get_places_distance_increasing
+> # add places
+> add_place 11 "First" shelter (1,1)
+Place:
+   First: pos=(1,1), id=11
+> get_place_count
+Number of places: 1
+> all_places
+Place:
+   First: pos=(1,1), id=11
+> add_place 22 "Second" firepit (1,2)
+Place:
+   Second: pos=(1,2), id=22
+> get_place_count
+Number of places: 2
+> all_places
+Places:
+1. First: pos=(1,1), id=11
+2. Second: pos=(1,2), id=22
+> # get the order
+> get_places_distance_increasing
+Places:
+1. First: pos=(1,1), id=11
+2. Second: pos=(1,2), id=22
+> # get the order again just to make sure :wink:
+> get_places_distance_increasing
+Places:
+1. First: pos=(1,1), id=11
+2. Second: pos=(1,2), id=22
+> # add more and check the order
+> add_place 44 "Second" firepit (1,2)
+Place:
+   Second: pos=(1,2), id=44
+> get_places_distance_increasing
+Places:
+1. First: pos=(1,1), id=11
+2. Second: pos=(1,2), id=22
+3. Second: pos=(1,2), id=44
+> get_places_distance_increasing
+Places:
+1. First: pos=(1,1), id=11
+2. Second: pos=(1,2), id=22
+3. Second: pos=(1,2), id=44
+> add_place 33 "Second" peak (1,2)
+Place:
+   Second: pos=(1,2), id=33
+> get_places_distance_increasing
+Places:
+1. First: pos=(1,1), id=11
+2. Second: pos=(1,2), id=22
+3. Second: pos=(1,2), id=33
+4. Second: pos=(1,2), id=44
+> get_places_distance_increasing
+Places:
+1. First: pos=(1,1), id=11
+2. Second: pos=(1,2), id=22
+3. Second: pos=(1,2), id=33
+4. Second: pos=(1,2), id=44
+> add_place 55 "A" bay (2,1)
+Place:
+   A: pos=(2,1), id=55
+> get_places_distance_increasing
+Places:
+1. First: pos=(1,1), id=11
+2. A: pos=(2,1), id=55
+3. Second: pos=(1,2), id=22
+4. Second: pos=(1,2), id=33
+5. Second: pos=(1,2), id=44
+> get_places_distance_increasing
+Places:
+1. First: pos=(1,1), id=11
+2. A: pos=(2,1), id=55
+3. Second: pos=(1,2), id=22
+4. Second: pos=(1,2), id=33
+5. Second: pos=(1,2), id=44
+> add_place 66 "A" bay (0,2)
+Place:
+   A: pos=(0,2), id=66
+> get_places_distance_increasing
+Places:
+1. First: pos=(1,1), id=11
+2. A: pos=(0,2), id=66
+3. A: pos=(2,1), id=55
+4. Second: pos=(1,2), id=22
+5. Second: pos=(1,2), id=33
+6. Second: pos=(1,2), id=44
+> get_places_distance_increasing
+Places:
+1. First: pos=(1,1), id=11
+2. A: pos=(0,2), id=66
+3. A: pos=(2,1), id=55
+4. Second: pos=(1,2), id=22
+5. Second: pos=(1,2), id=33
+6. Second: pos=(1,2), id=44
+> clear_all
+Cleared all places
+> get_place_count
+Number of places: 0
+> all_places
+No places!
+> get_places_distance_increasing
+> 

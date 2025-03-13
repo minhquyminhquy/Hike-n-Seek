@@ -1,0 +1,9 @@
+read "integration-compulsory/test-01-kintulammi-in.txt"
+
+get_ways_from (194,119)
+
+clear_ways
+
+read "example-data/kintulammi-ways-short.txt" silent
+
+trim_ways

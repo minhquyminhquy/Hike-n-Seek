@@ -1,0 +1,89 @@
+> clear_all
+Cleared all places
+> get_place_count
+Number of places: 0
+> all_places
+No places!
+> get_places_alphabetically
+> # add places
+> add_place 111 "First" shelter (1,1)
+Place:
+   First: pos=(1,1), id=111
+> get_place_count
+Number of places: 1
+> all_places
+Place:
+   First: pos=(1,1), id=111
+> add_place 222 "Second" firepit (1,2)
+Place:
+   Second: pos=(1,2), id=222
+> get_place_count
+Number of places: 2
+> all_places
+Places:
+1. First: pos=(1,1), id=111
+2. Second: pos=(1,2), id=222
+> # get the order
+> get_places_alphabetically
+Places:
+1. First: pos=(1,1), id=111
+2. Second: pos=(1,2), id=222
+> # get the order again just to make sure :wink:
+> get_places_alphabetically
+Places:
+1. First: pos=(1,1), id=111
+2. Second: pos=(1,2), id=222
+> # add more and check the order
+> add_place 444 "Second" firepit (1,2)
+Place:
+   Second: pos=(1,2), id=444
+> get_places_alphabetically
+Places:
+1. First: pos=(1,1), id=111
+2. Second: pos=(1,2), id=222
+3. Second: pos=(1,2), id=444
+> get_places_alphabetically
+Places:
+1. First: pos=(1,1), id=111
+2. Second: pos=(1,2), id=222
+3. Second: pos=(1,2), id=444
+> add_place 333 "Second" firepit (1,2)
+Place:
+   Second: pos=(1,2), id=333
+> get_places_alphabetically
+Places:
+1. First: pos=(1,1), id=111
+2. Second: pos=(1,2), id=222
+3. Second: pos=(1,2), id=333
+4. Second: pos=(1,2), id=444
+> get_places_alphabetically
+Places:
+1. First: pos=(1,1), id=111
+2. Second: pos=(1,2), id=222
+3. Second: pos=(1,2), id=333
+4. Second: pos=(1,2), id=444
+> add_place 555 "A" peak (5,5)
+Place:
+   A: pos=(5,5), id=555
+> get_places_alphabetically
+Places:
+1. A: pos=(5,5), id=555
+2. First: pos=(1,1), id=111
+3. Second: pos=(1,2), id=222
+4. Second: pos=(1,2), id=333
+5. Second: pos=(1,2), id=444
+> get_places_alphabetically
+Places:
+1. A: pos=(5,5), id=555
+2. First: pos=(1,1), id=111
+3. Second: pos=(1,2), id=222
+4. Second: pos=(1,2), id=333
+5. Second: pos=(1,2), id=444
+> clear_all
+Cleared all places
+> get_place_count
+Number of places: 0
+> all_places
+No places!
+> get_places_alphabetically
+> 

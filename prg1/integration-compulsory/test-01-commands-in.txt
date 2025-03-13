@@ -1,0 +1,119 @@
+clear_all
+add_area 2579 "R2579" (272668,6639705) (272668,6639943) (272906,6639705) (272906,6639943)
+add_area 4644 "R4644" (272618,6639655) (272618,6639993) (272956,6639655) (272956,6639993)
+add_subarea_to_area 2579 4644
+add_place 999 "Hangonkylantie" parking (272787,6639824)
+get_place_name 999
+get_area_coords 2579
+get_places_distance_increasing
+get_area_coords 2579
+all_areas
+get_place_coord 999
+ancestor_areas_of_subarea 999
+change_place_coord 999 (272792,6639830)
+all_areas
+get_places_alphabetically
+all_areas
+all_places
+add_area 357 "R357" (265244,6786843) (265244,6787081) (265482,6786843) (265482,6787081)
+add_area 246 "R246" (265194,6786793) (265194,6787131) (265532,6786793) (265532,6787131)
+add_subarea_to_area 357 246
+add_place 1234567890 "Moortintie" parking (265363,6786962)
+ancestor_areas_of_subarea 246
+get_places_distance_increasing
+all_places
+add_area 4548 "R4548" (261935,7013995) (261935,7014233) (262173,7013995) (262173,7014233)
+add_area 3770 "R3770" (261885,7013945) (261885,7014283) (262223,7013945) (262223,7014283)
+add_subarea_to_area 4548 3770
+add_place 1212121212121212 "Bokull" parking (262054,7014114)
+get_place_count
+add_area 9736 "R9736" (353784,7549451) (353784,7549689) (354022,7549451) (354022,7549689)
+add_area 267 "R267" (353734,7549401) (353734,7549739) (354072,7549401) (354072,7549739)
+add_subarea_to_area 9736 267
+add_place 444 "Ylimuoniontie" peak (353903,7549570)
+get_area_name 4644
+get_place_name 1234567890
+find_places_with_coord (272792,6639830)
+change_place_coord 1234567890 (265370,6786962)
+add_area 7316 "R7316" (423767,7203929) (423767,7204167) (424005,7203929) (424005,7204167)
+add_area 4882 "R4882" (423717,7203879) (423717,7204217) (424055,7203879) (424055,7204217)
+add_subarea_to_area 7316 4882
+add_place 55 "Karhuoja" peak (423886,7204048)
+add_area 4095 "R4095" (385219,6722767) (385219,6723005) (385457,6722767) (385457,6723005)
+add_area 2461 "R2461" (385169,6722717) (385169,6723055) (385507,6722717) (385507,6723055)
+add_subarea_to_area 4095 2461
+add_place 9875238947203785 "Kurjenpolventie" peak (385338,6722886)
+get_place_name 55
+get_places_alphabetically
+get_place_count
+get_places_distance_increasing
+ancestor_areas_of_subarea 55
+get_places_distance_increasing
+get_place_count
+get_area_name 3770
+get_places_alphabetically
+get_area_name 9736
+add_area 1566 "R1566" (281461,6701765) (281461,6702003) (281699,6701765) (281699,6702003)
+add_area 314 "R314" (281411,6701715) (281411,6702053) (281749,6701715) (281749,6702053)
+add_subarea_to_area 1566 314
+add_place 2468 "Heinaalhontie" other (281580,6701884)
+get_place_coord 1234567890
+get_area_name 3770
+get_place_coord 9875238947203785
+get_place_count
+find_places_with_coord (272792,6639830)
+all_places
+ancestor_areas_of_subarea 2468
+add_area 4280 "R4280" (383009,6713626) (383009,6713864) (383247,6713626) (383247,6713864)
+add_area 2059 "R2059" (382959,6713576) (382959,6713914) (383297,6713576) (383297,6713914)
+add_subarea_to_area 4280 2059
+add_place 567987 "Salmelanmaki" other (383128,6713745)
+get_place_coord 2468
+get_place_name 444
+get_area_name 4548
+get_area_name 314
+find_places_with_type parking
+get_places_distance_increasing
+ancestor_areas_of_subarea 357
+add_area 1005 "R1005" (365244,7097457) (365244,7097695) (365482,7097457) (365482,7097695)
+add_area 2732 "R2732" (365194,7097407) (365194,7097745) (365532,7097407) (365532,7097745)
+add_subarea_to_area 1005 2732
+add_place 88 "Reku" other (365363,7097576)
+add_area 417 "R417" (402056,6824581) (402056,6824819) (402294,6824581) (402294,6824819)
+add_area 530 "R530" (402006,6824531) (402006,6824869) (402344,6824531) (402344,6824869)
+add_subarea_to_area 417 530
+add_place 8352362743329865203645306 "Poikkijarventie" firepit (402175,6824700)
+add_area 5927 "R5927" (433533,6913973) (433533,6914211) (433771,6913973) (433771,6914211)
+add_area 8873 "R8873" (433483,6913923) (433483,6914261) (433821,6913923) (433821,6914261)
+add_subarea_to_area 5927 8873
+add_place 5555555555555577777777 "Koivuharju" firepit (433652,6914092)
+get_place_name 1234567890
+get_place_count
+get_place_name 1212121212121212
+add_area 832 "R832" (263613,6943194) (263613,6943432) (263851,6943194) (263851,6943432)
+add_area 2080 "R2080" (263563,6943144) (263563,6943482) (263901,6943144) (263901,6943482)
+add_subarea_to_area 832 2080
+add_place 111111111111111111111111111 "Pitkamonkyla" parking (263732,6943313)
+get_places_alphabetically
+all_places
+get_place_coord 8352362743329865203645306
+add_area 4510 "R4510" (232006,6721212) (232006,6721450) (232244,6721212) (232244,6721450)
+add_area 1019 "R1019" (231956,6721162) (231956,6721500) (232294,6721162) (232294,6721500)
+add_subarea_to_area 4510 1019
+add_place 93824503864206 "Jonkkunen" parking (232125,6721331)
+get_places_alphabetically
+all_places
+add_area 7291 "R7291" (464724,6818801) (464724,6819039) (464962,6818801) (464962,6819039)
+add_area 3164 "R3164" (464674,6818751) (464674,6819089) (465012,6818751) (465012,6819089)
+add_subarea_to_area 7291 3164
+add_place 22 "Ulmalantie" shelter (464843,6818920)
+find_places_with_coord (281580,6701884)
+get_place_count
+add_area 8867 "R8867" (549723,7122198) (549723,7122436) (549961,7122198) (549961,7122436)
+add_area 9050 "R9050" (549673,7122148) (549673,7122486) (550011,7122148) (550011,7122486)
+add_subarea_to_area 8867 9050
+add_place 87654 "Rimpilanniemi" shelter (549842,7122317)
+get_area_coords 314
+find_places_with_type firepit
+all_areas
+get_places_distance_increasing

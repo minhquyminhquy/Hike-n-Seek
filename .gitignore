@@ -1,32 +1,72 @@
-# Prerequisites
-*.d
+qrc_resources.cpp
+__pycache__/
 
-# Compiled Object files
-*.slo
-*.lo
+_build/
+_data/
+debug/
+
+prg1-template/
+prg2-template/
+
+pia.txt
+prg-ref/prg
+prg1.exe
+prg2.exe
+.idea
+.settings
+.project
+.pydevproject
+*.sublime-project
+*.sublime-workspace
+.DS_Store
+*~
+*.sw[op]
+
+# editor
+.vscode
+*.pro.user*
+.DS_Store
 *.o
-*.obj
+a.out
+build-*
+.~lock.*
+~*
+.vscode
+.qmake.stash
+Makefile*
+moc_mainwindow.cpp
+moc_predefs.h
+ui_mainwindow.h
+__pycache__
+node_modules/
+moc_*
+doc
+Doxyfile
+.qtc_clangd
+prg-ref/release
+prg-ref/prg1
+prg1-ref/prg1-ref
+prg2-ref/prg2-ref
+prg1/prg1
+prg2/prg2
+prg1/prg
+prg2/prg
+prg1-template/prg
+prg2-template/prg
+prg1-template/prg1
+prg2-template/prg2
+prg1-template/prg2
+prg2-template/prg1
 
-# Precompiled Headers
-*.gch
-*.pch
-
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
-
-# Fortran module files
-*.mod
-*.smod
-
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
-
-# Executables
-*.exe
-*.out
-*.app
+*.autosave
+contours.json
+.venv
+core
+*~
+*.core
+*.pro.user
+**/prg1/prg1
+**/prg2/prg2
+**/prg1/prg2
+**/prg2/prg1
+**/prg-ref/prg
