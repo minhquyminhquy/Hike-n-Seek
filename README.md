@@ -1,7 +1,7 @@
 # Hike & Seek - Data Structures and Algorithms Project
 
 ## 🌟 Overview
-A geospatial data engine for outdoor navigation systems, combining hierarchical area management with route optimization algorithms. Built as part of the University of Helsinki's Data Structures and Algorithms course.
+A geospatial data engine for outdoor navigation systems, combining hierarchical area management with route optimization algorithms. Built as part of the Tampere University's Data Structures and Algorithms course.
 
 ---
 
